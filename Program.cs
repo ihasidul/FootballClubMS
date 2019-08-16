@@ -16,7 +16,7 @@ namespace FootballClubMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TicketSeller());
+            Application.Run(new Login());
         }
     }
 }

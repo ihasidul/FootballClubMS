@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FootballClubMS.Framework;
 
 namespace FootballClubMS.Applications
 {
@@ -15,6 +16,18 @@ namespace FootballClubMS.Applications
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            if (Validation.IsStringValid(this.txtId.ToString()))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Insert Id");
+            }
         }
     }
 }
