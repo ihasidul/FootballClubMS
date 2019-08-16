@@ -11,29 +11,29 @@ namespace FootballClubMS.Data
 {
     class DataAccess
     {
-        private SqlConnection sqlcon;
-        public SqlConnection Sqlcon
+        private static SqlConnection sqlcon;
+        public static SqlConnection Sqlcon
         {
             get { return sqlcon; }
             set { sqlcon = value; }
         }
 
-        private SqlCommand sqlcom;
-        public SqlCommand Sqlcom
+        private  static SqlCommand sqlcom;
+        public static SqlCommand Sqlcom
         {
             get { return sqlcom; }
             set { sqlcom = value; }
         }
 
-        private SqlDataAdapter sda;
-        public SqlDataAdapter Sda
+        private static SqlDataAdapter sda;
+        public static SqlDataAdapter Sda
         {
             get { return sda; }
             set { sda = value; }
         }
 
-        private DataSet ds;
-        public DataSet Ds
+        private static DataSet ds;
+        public static DataSet Ds
         {
             get { return ds; }
             set { ds = value; }
@@ -46,28 +46,28 @@ namespace FootballClubMS.Data
             //this.sqcon = new SqlConnection(WFAExer.Properties.Settings.Default.conStr);
             //this.Sqlcon = new SqlConnection(@"Data Source=LAPTOP-HASIB\SQLEXPRESS;Initial Catalog=testDB;Integrated Security=True");
             //this.Sqlcon = new SqlConnection(@"Data Source=DESKTOP-HASIB;Initial Catalog=mydb;Integrated Security=True");
-            this.Sqlcon = new SqlConnection(@"Data Source=DESKTOP-QLIANTH;Initial Catalog=footballclub;Integrated Security=True");
+            DataAccess.Sqlcon = new SqlConnection(@"Data Source=DESKTOP-QLIANTH;Initial Catalog=footballclub;Integrated Security=True");
             Sqlcon.Open();
         }
 
-        private void QueryText(string query)
+        private static  void QueryText(string query)
         {
-            this.Sqlcom = new SqlCommand(query, this.Sqlcon);
+            DataAccess.Sqlcom = new SqlCommand(query, DataAccess.Sqlcon);
         }
 
-        public DataSet ExecuteQuery(string sql)
+        public static DataSet ExecuteQuery(string sql)
         {
-            this.QueryText(sql);
-            this.Sda = new SqlDataAdapter(this.Sqlcom);
-            this.Ds = new DataSet();
-            this.Sda.Fill(this.Ds);
-            return this.Ds;
+            DataAccess.QueryText(sql);
+            DataAccess.Sda = new SqlDataAdapter(DataAccess.Sqlcom);
+            DataAccess.Ds = new DataSet();
+            DataAccess.Sda.Fill(DataAccess.Ds);
+            return DataAccess.Ds;
         }
 
-        public int ExecuteUpdateQuery(string sql)
+        public static int ExecuteUpdateQuery(string sql)
         {
-            this.QueryText(sql);
-            int u = this.Sqlcom.ExecuteNonQuery();
+            DataAccess.QueryText(sql);
+            int u = DataAccess.Sqlcom.ExecuteNonQuery();
             return u;
         }
     }

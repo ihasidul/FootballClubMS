@@ -7,6 +7,7 @@ using System.Data;
 using FootballClubMS.Applications;
 using FootballClubMS.Data;
 using System.Windows.Forms;
+using FootballClubMS.Repository;
 
 namespace FootballClubMS.Entity
 {
@@ -17,7 +18,7 @@ namespace FootballClubMS.Entity
         private string designation;
         private string email;
         private double  salary;
-
+        private static int autoEmployeeId = 0 ;
         public string Id
         {
             get { return this.id; }
@@ -50,22 +51,42 @@ namespace FootballClubMS.Entity
             this.Designation = designation;
             if (Designation.ToLower().Equals("admin"))
             {
-                int tempid = UserRepository.GetTotalUsers() + 1;
-                this.ID = "a-" + tempid.ToString().PadLeft(6, '0') + "-1";
+                int temp = EmployeeRepository.GetValueForEmployeeId();
+                this.Id = "a-" + temp; 
             }
             else if (Designation.ToLower().Equals("manager"))
             {
-                int tempid = UserRepository.GetTotalUsers() + 1;
-                this.ID = "m-" + tempid.ToString().PadLeft(6, '0') + "-2";
+                int temp = EmployeeRepository.GetValueForEmployeeId();
+                this.Id = "m-" + temp;
+
             }
-            
+
             else if (Designation.ToLower().Equals("seller"))
             {
-                int tempid = UserRepository.GetTotalUsers() + 1;
-                this.ID = "s-" + tempid.ToString().PadLeft(6, '0') + "-4";
+                int temp = EmployeeRepository.GetValueForEmployeeId();
+                this.Id = "s-" + temp;
+
             }
             this.Email = email;
-            
+            this.Salary = salary;           
+        }
+
+        public EmployeeEntity(DataSet employee)
+        {
+            try
+            {
+                this.Id = employee.Tables[0].Rows[0][0].ToString();
+                this.Name = employee.Tables[0].Rows[0][1].ToString();
+                this.Designation = employee.Tables[0].Rows[0][2].ToString();
+                this.Email = employee.Tables[0].Rows[0][3].ToString();
+                string s = employee.Tables[0].Rows[0][4].ToString();
+                this.Salary = Convert.ToDouble(s);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Could not get Employee informatin");
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
