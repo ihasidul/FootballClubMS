@@ -43,7 +43,7 @@ namespace FootballClubMS.Applications
         public void PopulateGridviewForEmployeeSearched()
         {
             this.dgvEmployee.AutoGenerateColumns = false;
-            this.Ds = EmployeeRepository.SearchEmployee(this.txtEmpSearch.Text);
+            this.Ds = EmployeeRepository.SearchEmployee(this.txtEmpSearch.Text);//don't bring this.txtEmpSearch.Text as a string from other method.
             this.dgvEmployee.DataSource = this.Ds.Tables[0];
             
 
@@ -65,7 +65,7 @@ namespace FootballClubMS.Applications
 
 
                     LoginEntity le = new LoginEntity(this.ea.Id, this.txtOldPassword.Text.ToString());
-                    bool check = LoginRepository.SearchUser(le);
+                    bool check = LoginRepository.SearchUser(le);//this will say if the id is in the login table or not
                     if (this.Ds.Tables[0].Rows.Count == 1)
                     {
                         LoginRepository.UpdateUserPassword(le, this.txtNewPassword.Text.ToString());
@@ -105,6 +105,7 @@ namespace FootballClubMS.Applications
                     Random rnd = new Random();
                     string password = rnd.Next(100, 999).ToString();
                     LoginRepository.InsertUser(te.Id, password);
+                    MessageBox.Show("Your ID is " + te.Id + " and Password is " + password);
                     PopulateGridviewForEmployee();
                 }
                 else
@@ -124,6 +125,29 @@ namespace FootballClubMS.Applications
         private void TxtEmpSearch_TextChanged(object sender, EventArgs e)
         {
             PopulateGridviewForEmployeeSearched();
+        }
+
+        private void DgvEmployee_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.txtEmpName.Text = this.dgvEmployee.CurrentRow.Cells["emp_name"].Value.ToString();
+            this.txtEmpDesignation.Text = this.dgvEmployee.CurrentRow.Cells["designation"].Value.ToString();
+            this.txtEmpEmail.Text = this.dgvEmployee.CurrentRow.Cells["emp_email"].Value.ToString();
+            this.txtEmpSalary.Text = this.dgvEmployee.CurrentRow.Cells["salary"].Value.ToString();
+        }
+
+        private void BtnEmployeeDelete_Click(object sender, EventArgs e)
+        {
+            if (this.dgvEmployee.CurrentRow.Cells["designation"].Value.ToString() == "admin" || this.dgvEmployee.CurrentRow.Cells["designation"].Value.ToString() == "Admin")
+            {
+                MessageBox.Show("Admin can not delete himself.");
+                PopulateGridviewForEmployee();
+            }
+            else
+            {
+                EmployeeRepository.DeleteEmployee(this.dgvEmployee.CurrentRow.Cells["emp_id"].Value.ToString());
+                PopulateGridviewForEmployee();
+            }
+            
         }
     }
 }

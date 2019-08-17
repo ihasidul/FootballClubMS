@@ -49,9 +49,7 @@ namespace FootballClubMS.Repository
             {
                 {
                     string sql = "insert into Employee (emp_id,emp_name,emp_email,designation,salary) values ('" + emp.Id + "','" + emp.Name + "','" + emp.Email + "','" + emp.Designation + "','" + emp.Salary + "');";
-
-
-                    MessageBox.Show("data inserted");
+                    
                     return DataAccess.GetDataSet(sql);
                 }
             }
@@ -101,6 +99,7 @@ namespace FootballClubMS.Repository
                 string sqlLogin = "delete from login where id = '" + text + "';";//this is to delete from login table
                 Ds =  DataAccess.GetDataSet(sql);
                 DataAccess.ExecuteQuery(sqlLogin);
+                MessageBox.Show("Deletion done");
                 return Ds;
             }
             catch (Exception exc)
