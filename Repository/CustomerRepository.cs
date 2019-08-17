@@ -18,7 +18,7 @@ namespace FootballClubMS.Repository
             try
             {
                 string sql = "select autoid from customer where autoid = (select max(autoid) from customer);";
-                Ds = DataAccess.ExecuteQuery(sql);
+                Ds = DataAccess.GetDataSet(sql);
                 string id = Ds.Tables[0].Rows[0][0].ToString();
 
                 return Convert.ToInt32(id) + 1;

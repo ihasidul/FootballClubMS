@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FootballClubMS.Entity;
-
+using FootballClubMS.Repository;
 namespace FootballClubMS.Framework
 {
     public static class Validation
@@ -17,9 +17,9 @@ namespace FootballClubMS.Framework
             return true;
         }
 
-        public static bool IsUserInDB(LoginEntity l)
+        public static bool IsUserInDB(LoginEntity l)//serach for the loginEntity object in login table
         {
-            if ()
+            if (LoginRepository.SearchUser(l) == true)
             {
                 return true;
             }

@@ -18,7 +18,7 @@ namespace FootballClubMS.Repository
             try
             {
                 string sql = "select autoid from employee where autoid = (select max(autoid) from employee);";
-                Ds = DataAccess.ExecuteQuery(sql);
+                Ds = DataAccess.GetDataSet(sql);
                 string id = Ds.Tables[0].Rows[0][0].ToString();
                 
                 return Convert.ToInt32(id) + 1;
@@ -34,7 +34,7 @@ namespace FootballClubMS.Repository
         {
             try
             {
-                return DataAccess.ExecuteQuery(sql);
+                return DataAccess.GetDataSet(sql);
             }
             catch (Exception ex)
             {
@@ -51,7 +51,7 @@ namespace FootballClubMS.Repository
                     string sql = "insert into Employee (id,name,email,designation,salary) values ('" + emp.Id + "','" + emp.Name + "','" + emp.Email + "','" + emp.Designation + "','" + emp.Salary + "');";
 
                     MessageBox.Show("data inserted");
-                    return DataAccess.ExecuteQuery(sql);
+                    return DataAccess.GetDataSet(sql);
                 }
             }
             catch (Exception ex)
@@ -69,7 +69,7 @@ namespace FootballClubMS.Repository
                     string sql = "UPDATE employee SET name = '" + emp.Id + "',  email = '" + emp.Email + "',designation = '" + emp.Designation + "', salary = '" + emp.Salary + "' WHERE id = '" + emp.Id + "'; ";
 
                     MessageBox.Show("data updated");
-                    return DataAccess.ExecuteQuery(sql);
+                    return DataAccess.GetDataSet(sql);
 
                 }
             }
@@ -84,7 +84,7 @@ namespace FootballClubMS.Repository
             try
             {
                 string sql = "select * from employee where name LIKE '%" + text + "%' ;";
-                return DataAccess.ExecuteQuery(sql);
+                return DataAccess.GetDataSet(sql);
             }
             catch (Exception ex)
             {
@@ -97,7 +97,7 @@ namespace FootballClubMS.Repository
             try
             {
                 string sql = "delete from employee where id = '" + text + "';";
-                return DataAccess.ExecuteQuery(sql);
+                return DataAccess.GetDataSet(sql);
             }
             catch (Exception exc)
             {

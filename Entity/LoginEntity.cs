@@ -24,6 +24,12 @@ namespace FootballClubMS.Entity
             get { return this.password; }
             set { this.password = value; }
         }
+
+        public LoginEntity(string id, string password)
+        {
+            this.Id = id;
+            this.Password = password;
+        }
         public LoginEntity(DataSet data)
         {
             try

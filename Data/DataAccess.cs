@@ -6,69 +6,85 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.Sql;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace FootballClubMS.Data
 {
     class DataAccess
     {
-        private static SqlConnection sqlcon;
-        public static SqlConnection Sqlcon
+        private static SqlConnection sqcon;
+
+        public static SqlConnection Sqcon
         {
-            get { return sqlcon; }
-            set { sqlcon = value; }
+            get
+            {
+                try
+                {
+                    if (sqcon == null)
+                    {
+                        sqcon = new SqlConnection(@"Data Source=DESKTOP-QLIANTH;Initial Catalog=footballclub;Integrated Security=True");
+                    }
+                    else if (sqcon.State != ConnectionState.Open)
+                    {
+                        sqcon.Open();
+                    }
+                    return sqcon;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return null;
+                }
+            }
         }
 
-        private  static SqlCommand sqlcom;
-        public static SqlCommand Sqlcom
+        public static DataSet GetDataSet(string query)
         {
-            get { return sqlcom; }
-            set { sqlcom = value; }
+            try
+            {
+                SqlCommand sqcom = new SqlCommand(query, Sqcon);
+                SqlDataAdapter sda = new SqlDataAdapter(sqcom);
+                DataSet ds = new DataSet();
+                sda.Fill(ds);
+                return ds;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
         }
 
-        private static SqlDataAdapter sda;
-        public static SqlDataAdapter Sda
+        public static DataTable GetDataTable(string query)
         {
-            get { return sda; }
-            set { sda = value; }
+            try
+            {
+                var ds = GetDataSet(query);
+                if (ds.Tables.Count > 0)
+                {
+                    return ds.Tables[0];
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
         }
 
-        private static DataSet ds;
-        public static DataSet Ds
+        public static int ExecuteQuery(string query)
         {
-            get { return ds; }
-            set { ds = value; }
-        }
-
-        //internal DataTable dt;
-
-        public DataAccess()
-        {
-            //this.sqcon = new SqlConnection(WFAExer.Properties.Settings.Default.conStr);
-            //this.Sqlcon = new SqlConnection(@"Data Source=LAPTOP-HASIB\SQLEXPRESS;Initial Catalog=testDB;Integrated Security=True");
-            //this.Sqlcon = new SqlConnection(@"Data Source=DESKTOP-HASIB;Initial Catalog=mydb;Integrated Security=True");
-            DataAccess.Sqlcon = new SqlConnection(@"Data Source=DESKTOP-QLIANTH;Initial Catalog=footballclub;Integrated Security=True");
-            Sqlcon.Open();
-        }
-
-        private static  void QueryText(string query)
-        {
-            DataAccess.Sqlcom = new SqlCommand(query, DataAccess.Sqlcon);
-        }
-
-        public static DataSet ExecuteQuery(string sql)
-        {
-            DataAccess.QueryText(sql);
-            DataAccess.Sda = new SqlDataAdapter(DataAccess.Sqlcom);
-            DataAccess.Ds = new DataSet();
-            DataAccess.Sda.Fill(DataAccess.Ds);
-            return DataAccess.Ds;
-        }
-
-        public static int ExecuteUpdateQuery(string sql)
-        {
-            DataAccess.QueryText(sql);
-            int u = DataAccess.Sqlcom.ExecuteNonQuery();
-            return u;
+            try
+            {
+                SqlCommand sqcom = new SqlCommand(query, Sqcon);
+                return sqcom.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
+            }
         }
     }
 }

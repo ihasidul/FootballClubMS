@@ -20,7 +20,7 @@ namespace FootballClubMS.Repository
             try
             {
                 string sql = "select autoid from player where autoid = (select max(autoid) from player);";
-                Ds = DataAccess.ExecuteQuery(sql);
+                Ds = DataAccess.GetDataSet(sql);
                 string id = Ds.Tables[0].Rows[0][0].ToString();
 
                 return Convert.ToInt32(id) + 1;
@@ -36,7 +36,7 @@ namespace FootballClubMS.Repository
         {
             try
             {
-                return DataAccess.ExecuteQuery(sql);
+                return DataAccess.GetDataSet(sql);
             }
             catch (Exception ex)
             {
@@ -52,7 +52,7 @@ namespace FootballClubMS.Repository
                     string sql = "insert into player(id,name,position,email,validationdate,performance,weeklyfee) values('" + pl.Id + "','" + pl.Name + "','" + pl.Position + "','" + pl.Email + "','" + pl.ValidationDate + "',0," + pl.WeeklyFee + ");";
 
                     MessageBox.Show("data inserted");
-                    return DataAccess.ExecuteQuery(sql);
+                    return DataAccess.GetDataSet(sql);
                 }
             }
             catch (Exception ex)
@@ -69,7 +69,7 @@ namespace FootballClubMS.Repository
                     string sql = "UPDATE player SET name = '" + pl.Id + "',  email = '" + pl.Email + "',position = '" + pl.Position + "', validationdate = '" + pl.ValidationDate + "', weeklyfee = '" + pl.WeeklyFee + "' WHERE id = '" + pl.Id + "'; ";
 
                     MessageBox.Show("data updated");
-                    return DataAccess.ExecuteQuery(sql);
+                    return DataAccess.GetDataSet(sql);
 
                 }
             }
@@ -88,7 +88,7 @@ namespace FootballClubMS.Repository
                     string sql = "UPDATE player SET performance = '" + pl.Performance + "'  WHERE id = '" + pl.Id + "'; ";
 
                     MessageBox.Show("data updated");
-                    return DataAccess.ExecuteQuery(sql);
+                    return DataAccess.GetDataSet(sql);
 
                 }
             }
@@ -103,7 +103,7 @@ namespace FootballClubMS.Repository
             try
             {
                 string sql = "select * from player where name LIKE '%" + text + "%' ;";
-                return DataAccess.ExecuteQuery(sql);
+                return DataAccess.GetDataSet(sql);
             }
             catch (Exception ex)
             {
@@ -116,7 +116,7 @@ namespace FootballClubMS.Repository
             try
             {
                 string sql = "delete from player where id = '" + text + "';";
-                return DataAccess.ExecuteQuery(sql);
+                return DataAccess.GetDataSet(sql);
             }
             catch (Exception exc)
             {
