@@ -39,31 +39,31 @@ namespace FootballClubMS.Applications
                     if (words[0] == "a")//He is an Admin
                     {
                         this.Visible = false;
-                        Admin a = new Admin(this);
+                        Admin a = new Admin(this,le.Id);
                         a.Visible = true;
                     }
                     else if(words[0] == "m")//He is a manager
                     {
                         this.Visible = false;
-                        Manager m = new Manager(this);
+                        Manager m = new Manager(this, le.Id);
                         m.Visible = true;
                     }
                     else if(words[0] == "s")//He is ticketSeller
                     {
                         this.Visible = false;
-                        TicketSeller a = new TicketSeller(this);
+                        TicketSeller a = new TicketSeller(this, le.Id);
                         a.Visible = true;
                     }
                     else if (words[0] == "e")//He is ticketSeller
                     {
                         this.Visible = false;
-                        Employee a = new Employee(this);
+                        Employee a = new Employee(this, le.Id);
                         a.Visible = true;
                     }
                     else if(words[0] == "p")//he is a Player
                     {
                         this.Visible = false;
-                        Player a = new Player(this);
+                        Player a = new Player(this, le.Id);
                         a.Visible = true;
                     }
                 }

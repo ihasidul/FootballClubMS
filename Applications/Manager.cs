@@ -13,7 +13,7 @@ namespace FootballClubMS.Applications
     public partial class Manager : MetroFramework.Forms.MetroForm
     {
         private Login l;
-        public Manager(Login l)
+        public Manager(Login l,string id)
         {
             InitializeComponent();
             this.l = l;

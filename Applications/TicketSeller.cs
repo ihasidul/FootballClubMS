@@ -13,7 +13,7 @@ namespace FootballClubMS.Applications
     public partial class TicketSeller : MetroFramework.Forms.MetroForm
     {
         private Login l;
-        public TicketSeller(Login l)
+        public TicketSeller(Login l, string id)
         {
             InitializeComponent();
             this.l = l;

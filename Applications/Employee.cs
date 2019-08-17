@@ -13,7 +13,7 @@ namespace FootballClubMS.Applications
     public partial class Employee : MetroFramework.Forms.MetroForm
     {
         private Login l;
-        public Employee(Login l)
+        public Employee(Login l, string id)
         {
             InitializeComponent();
             this.l = l;

@@ -105,6 +105,19 @@ namespace FootballClubMS.Repository
                 return null;
             }
         }
+        public static DataSet GetSpecificEmployee(string id)
+        {
+            try
+            {
+                string sql = "select * from employee where id = '" + id + "';";
+                return DataAccess.GetDataSet(sql);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
+        }
 
     }
 }
