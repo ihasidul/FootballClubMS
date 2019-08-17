@@ -48,7 +48,7 @@ namespace FootballClubMS.Repository
             try
             {
                 {
-                    string sql = "insert into Employee (id,name,email,designation,salary) values ('" + emp.Id + "','" + emp.Name + "','" + emp.Email + "','" + emp.Designation + "','" + emp.Salary + "');";
+                    string sql = "insert into Employee (emp_id,name,email,designation,salary) values ('" + emp.Id + "','" + emp.Name + "','" + emp.Email + "','" + emp.Designation + "','" + emp.Salary + "');";
 
                     MessageBox.Show("data inserted");
                     return DataAccess.GetDataSet(sql);
@@ -66,7 +66,7 @@ namespace FootballClubMS.Repository
             {
                 {
 
-                    string sql = "UPDATE employee SET name = '" + emp.Id + "',  email = '" + emp.Email + "',designation = '" + emp.Designation + "', salary = '" + emp.Salary + "' WHERE id = '" + emp.Id + "'; ";
+                    string sql = "UPDATE employee SET name = '" + emp.Name + "',  email = '" + emp.Email + "',designation = '" + emp.Designation + "', salary = '" + emp.Salary + "' WHERE emp_id = '" + emp.Id + "'; ";
 
                     MessageBox.Show("data updated");
                     return DataAccess.GetDataSet(sql);
@@ -83,7 +83,7 @@ namespace FootballClubMS.Repository
         {
             try
             {
-                string sql = "select * from employee where name LIKE '%" + text + "%' ;";
+                string sql = "select * from employee where name LIKE '%" + text + "%' or emp_id LIKE '%" + text + "%' ;";
                 return DataAccess.GetDataSet(sql);
             }
             catch (Exception ex)
@@ -96,8 +96,11 @@ namespace FootballClubMS.Repository
         {
             try
             {
-                string sql = "delete from employee where id = '" + text + "';";
-                return DataAccess.GetDataSet(sql);
+                string sql = "delete from employee where emp_id = '" + text + "';";
+                string sqlLogin = "delete from login where id = '" + text + "';";
+                Ds =  DataAccess.GetDataSet(sql);
+                DataAccess.ExecuteQuery(sqlLogin);
+                return Ds;
             }
             catch (Exception exc)
             {
@@ -109,7 +112,7 @@ namespace FootballClubMS.Repository
         {
             try
             {
-                string sql = "select * from employee where id = '" + id + "';";
+                string sql = "select * from employee where emp_id = '" + id + "';";
                 return DataAccess.GetDataSet(sql);
             }
             catch(Exception ex)

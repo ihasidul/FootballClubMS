@@ -81,6 +81,12 @@
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
+            this.txtOldPassword = new MetroFramework.Controls.MetroTextBox();
+            this.txtNewPassword = new MetroFramework.Controls.MetroTextBox();
+            this.btnChangePassword = new MetroFramework.Controls.MetroButton();
             this.metroPanel1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -119,6 +125,12 @@
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.btnChangePassword);
+            this.metroTabPage1.Controls.Add(this.txtNewPassword);
+            this.metroTabPage1.Controls.Add(this.txtOldPassword);
+            this.metroTabPage1.Controls.Add(this.metroLabel17);
+            this.metroTabPage1.Controls.Add(this.metroLabel16);
+            this.metroTabPage1.Controls.Add(this.metroLabel15);
             this.metroTabPage1.Controls.Add(this.txtAdminSalary);
             this.metroTabPage1.Controls.Add(this.txtAdminEmail);
             this.metroTabPage1.Controls.Add(this.txtAdminName);
@@ -158,6 +170,7 @@
             this.txtAdminSalary.MaxLength = 32767;
             this.txtAdminSalary.Name = "txtAdminSalary";
             this.txtAdminSalary.PasswordChar = '\0';
+            this.txtAdminSalary.ReadOnly = true;
             this.txtAdminSalary.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtAdminSalary.SelectedText = "";
             this.txtAdminSalary.SelectionLength = 0;
@@ -188,6 +201,7 @@
             this.txtAdminEmail.MaxLength = 32767;
             this.txtAdminEmail.Name = "txtAdminEmail";
             this.txtAdminEmail.PasswordChar = '\0';
+            this.txtAdminEmail.ReadOnly = true;
             this.txtAdminEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtAdminEmail.SelectedText = "";
             this.txtAdminEmail.SelectionLength = 0;
@@ -218,6 +232,7 @@
             this.txtAdminName.MaxLength = 32767;
             this.txtAdminName.Name = "txtAdminName";
             this.txtAdminName.PasswordChar = '\0';
+            this.txtAdminName.ReadOnly = true;
             this.txtAdminName.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtAdminName.SelectedText = "";
             this.txtAdminName.SelectionLength = 0;
@@ -406,6 +421,8 @@
             // 
             // metroGrid1
             // 
+            this.metroGrid1.AllowUserToAddRows = false;
+            this.metroGrid1.AllowUserToDeleteRows = false;
             this.metroGrid1.AllowUserToResizeRows = false;
             this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -433,6 +450,7 @@
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroGrid1.Location = new System.Drawing.Point(293, 91);
             this.metroGrid1.Name = "metroGrid1";
+            this.metroGrid1.ReadOnly = true;
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -604,6 +622,7 @@
             this.txtEmpId.MaxLength = 32767;
             this.txtEmpId.Name = "txtEmpId";
             this.txtEmpId.PasswordChar = '\0';
+            this.txtEmpId.ReadOnly = true;
             this.txtEmpId.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtEmpId.SelectedText = "";
             this.txtEmpId.SelectionLength = 0;
@@ -810,6 +829,8 @@
             // 
             // metroGrid2
             // 
+            this.metroGrid2.AllowUserToAddRows = false;
+            this.metroGrid2.AllowUserToDeleteRows = false;
             this.metroGrid2.AllowUserToResizeRows = false;
             this.metroGrid2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.metroGrid2.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -837,6 +858,7 @@
             this.metroGrid2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroGrid2.Location = new System.Drawing.Point(349, 102);
             this.metroGrid2.Name = "metroGrid2";
+            this.metroGrid2.ReadOnly = true;
             this.metroGrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -1025,6 +1047,106 @@
             this.metroLabel13.TabIndex = 30;
             this.metroLabel13.Text = "ID";
             // 
+            // metroLabel15
+            // 
+            this.metroLabel15.AutoSize = true;
+            this.metroLabel15.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel15.Location = new System.Drawing.Point(15, 190);
+            this.metroLabel15.Name = "metroLabel15";
+            this.metroLabel15.Size = new System.Drawing.Size(146, 25);
+            this.metroLabel15.TabIndex = 14;
+            this.metroLabel15.Text = "Change Password";
+            // 
+            // metroLabel16
+            // 
+            this.metroLabel16.AutoSize = true;
+            this.metroLabel16.Location = new System.Drawing.Point(15, 233);
+            this.metroLabel16.Name = "metroLabel16";
+            this.metroLabel16.Size = new System.Drawing.Size(89, 19);
+            this.metroLabel16.TabIndex = 15;
+            this.metroLabel16.Text = "Old Password";
+            // 
+            // metroLabel17
+            // 
+            this.metroLabel17.AutoSize = true;
+            this.metroLabel17.Location = new System.Drawing.Point(17, 268);
+            this.metroLabel17.Name = "metroLabel17";
+            this.metroLabel17.Size = new System.Drawing.Size(93, 19);
+            this.metroLabel17.TabIndex = 16;
+            this.metroLabel17.Text = "New Password";
+            // 
+            // txtOldPassword
+            // 
+            // 
+            // 
+            // 
+            this.txtOldPassword.CustomButton.Image = null;
+            this.txtOldPassword.CustomButton.Location = new System.Drawing.Point(98, 1);
+            this.txtOldPassword.CustomButton.Name = "";
+            this.txtOldPassword.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtOldPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtOldPassword.CustomButton.TabIndex = 1;
+            this.txtOldPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtOldPassword.CustomButton.UseSelectable = true;
+            this.txtOldPassword.CustomButton.Visible = false;
+            this.txtOldPassword.Lines = new string[0];
+            this.txtOldPassword.Location = new System.Drawing.Point(136, 233);
+            this.txtOldPassword.MaxLength = 32767;
+            this.txtOldPassword.Name = "txtOldPassword";
+            this.txtOldPassword.PasswordChar = '\0';
+            this.txtOldPassword.ReadOnly = true;
+            this.txtOldPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtOldPassword.SelectedText = "";
+            this.txtOldPassword.SelectionLength = 0;
+            this.txtOldPassword.SelectionStart = 0;
+            this.txtOldPassword.ShortcutsEnabled = true;
+            this.txtOldPassword.Size = new System.Drawing.Size(120, 23);
+            this.txtOldPassword.TabIndex = 17;
+            this.txtOldPassword.UseSelectable = true;
+            this.txtOldPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtOldPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txtNewPassword
+            // 
+            // 
+            // 
+            // 
+            this.txtNewPassword.CustomButton.Image = null;
+            this.txtNewPassword.CustomButton.Location = new System.Drawing.Point(98, 1);
+            this.txtNewPassword.CustomButton.Name = "";
+            this.txtNewPassword.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.txtNewPassword.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtNewPassword.CustomButton.TabIndex = 1;
+            this.txtNewPassword.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtNewPassword.CustomButton.UseSelectable = true;
+            this.txtNewPassword.CustomButton.Visible = false;
+            this.txtNewPassword.Lines = new string[0];
+            this.txtNewPassword.Location = new System.Drawing.Point(136, 268);
+            this.txtNewPassword.MaxLength = 32767;
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.PasswordChar = '\0';
+            this.txtNewPassword.ReadOnly = true;
+            this.txtNewPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtNewPassword.SelectedText = "";
+            this.txtNewPassword.SelectionLength = 0;
+            this.txtNewPassword.SelectionStart = 0;
+            this.txtNewPassword.ShortcutsEnabled = true;
+            this.txtNewPassword.Size = new System.Drawing.Size(120, 23);
+            this.txtNewPassword.TabIndex = 18;
+            this.txtNewPassword.UseSelectable = true;
+            this.txtNewPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtNewPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.Location = new System.Drawing.Point(181, 297);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(75, 23);
+            this.btnChangePassword.TabIndex = 19;
+            this.btnChangePassword.Text = "Change ";
+            this.btnChangePassword.UseSelectable = true;
+            this.btnChangePassword.Click += new System.EventHandler(this.BtnChangePassword_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1097,5 +1219,11 @@
         private MetroFramework.Controls.MetroDateTime dtpPlayerValidation;
         private MetroFramework.Controls.MetroLabel metroLabel14;
         private MetroFramework.Controls.MetroTextBox txtPlayerFee;
+        private MetroFramework.Controls.MetroTextBox txtNewPassword;
+        private MetroFramework.Controls.MetroTextBox txtOldPassword;
+        private MetroFramework.Controls.MetroLabel metroLabel17;
+        private MetroFramework.Controls.MetroLabel metroLabel16;
+        private MetroFramework.Controls.MetroLabel metroLabel15;
+        private MetroFramework.Controls.MetroButton btnChangePassword;
     }
 }

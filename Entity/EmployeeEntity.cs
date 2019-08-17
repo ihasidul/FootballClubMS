@@ -85,7 +85,7 @@ namespace FootballClubMS.Entity
             catch(Exception ex)
             {
                 MessageBox.Show("Could not get Employee informatin");
-                MessageBox.Show(ex.Message);
+               
             }
         }
     }

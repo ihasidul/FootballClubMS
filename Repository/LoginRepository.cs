@@ -25,7 +25,6 @@ namespace FootballClubMS.Repository
             {
                 return false;
             }
-
         }
            
     }

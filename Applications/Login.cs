@@ -35,7 +35,7 @@ namespace FootballClubMS.Applications
                 {
                     
                     string[] words = this.txtId.Text.Split('-');
-                    MessageBox.Show( words[0].ToString());
+                    //MessageBox.Show( words[0].ToString());
                     if (words[0] == "a")//He is an Admin
                     {
                         this.Visible = false;
@@ -69,7 +69,7 @@ namespace FootballClubMS.Applications
                 }
                 else
                 {
-                    MessageBox.Show("Insert Correct id and password" + Ds.Tables[0].Rows.Count);
+                    MessageBox.Show("Insert Correct id and password" );
 
                 }
             }
