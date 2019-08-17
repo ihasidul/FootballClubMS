@@ -27,6 +27,22 @@ namespace FootballClubMS.Repository
                 return null;
             }
         }
+
+        public static void InsertUser(string id,string passworrd)
+        {
+
+            try
+            {
+                {
+                    string sql = "insert into login (id,password) values ('" + id + "','" + passworrd + "');";
+                    DataAccess.ExecuteQuery(sql);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something is wrong in Login. Error: " + ex.Message);
+            }
+        }
         public static bool SearchUser(LoginEntity l)
         {
             string sql = "select * from login where id = '"+ l.Id +"' and password = '"+ l.Password +"';";

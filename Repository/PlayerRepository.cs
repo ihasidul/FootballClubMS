@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
-using FootballClubMS.Applications;
 using FootballClubMS.Entity;
 using FootballClubMS.Data;
 
@@ -49,7 +48,7 @@ namespace FootballClubMS.Repository
             try
             {
                 {
-                    string sql = "insert into player(id,name,position,email,validationdate,performance,weeklyfee) values('" + pl.Id + "','" + pl.Name + "','" + pl.Position + "','" + pl.Email + "','" + pl.ValidationDate + "',0," + pl.WeeklyFee + ");";
+                    string sql = "insert into player(player_id,player_name,position,player_email,validationdate,performance,weeklyfee) values('" + pl.Id + "','" + pl.Name + "','" + pl.Position + "','" + pl.Email + "','" + pl.ValidationDate + "',0," + pl.WeeklyFee + ");";
 
                     MessageBox.Show("data inserted");
                     return DataAccess.GetDataSet(sql);
@@ -66,7 +65,7 @@ namespace FootballClubMS.Repository
             {
                 {
 
-                    string sql = "UPDATE player SET name = '" + pl.Id + "',  email = '" + pl.Email + "',position = '" + pl.Position + "', validationdate = '" + pl.ValidationDate + "', weeklyfee = '" + pl.WeeklyFee + "' WHERE id = '" + pl.Id + "'; ";
+                    string sql = "UPDATE player SET player_name = '" + pl.Id + "',  player_email = '" + pl.Email + "',position = '" + pl.Position + "', validationdate = '" + pl.ValidationDate + "', weeklyfee = '" + pl.WeeklyFee + "' WHERE player_id = '" + pl.Id + "'; ";
 
                     MessageBox.Show("data updated");
                     return DataAccess.GetDataSet(sql);
@@ -102,7 +101,7 @@ namespace FootballClubMS.Repository
         {
             try
             {
-                string sql = "select * from player where name LIKE '%" + text + "%' ;";
+                string sql = "select * from player where playr_name LIKE '%" + text + "%' ;";
                 return DataAccess.GetDataSet(sql);
             }
             catch (Exception ex)
@@ -115,7 +114,9 @@ namespace FootballClubMS.Repository
         {
             try
             {
-                string sql = "delete from player where id = '" + text + "';";
+                string sql = "delete from player where player_id = '" + text + "';";//this is for player table
+                string sqlLogin = "delete from login where player_id = '" + text + "';";
+                DataAccess.GetDataSet(sqlLogin);
                 return DataAccess.GetDataSet(sql);
             }
             catch (Exception exc)
@@ -130,7 +131,7 @@ namespace FootballClubMS.Repository
         {
             try
             {
-                string sql = "select position from player where id = '" + text + "';";
+                string sql = "select position from player where player_id = '" + text + "';";
                 return DataAccess.GetDataSet(sql);
             }
             catch (Exception exc)
@@ -144,7 +145,7 @@ namespace FootballClubMS.Repository
         {
             try
             {
-                string sql = "select performance from player where id = '" + text + "';";
+                string sql = "select performance from player where player_id = '" + text + "';";
                 Ds = DataAccess.GetDataSet(sql);
                 double previousPerformance = Convert.ToInt32(Ds.Tables[0].Rows[0][0].ToString());
                 double currentPerformance = (performance + previousPerformance) / 2;
@@ -161,7 +162,7 @@ namespace FootballClubMS.Repository
         {
             try
             {
-                string sql = "select top 2 name from player where position = 'striker' order by performance desc;";
+                string sql = "select top 2 player_name from player where position = 'striker' order by performance desc;";
                 return DataAccess.GetDataSet(sql);
             }
             catch (Exception exc)
@@ -175,7 +176,7 @@ namespace FootballClubMS.Repository
         {
             try
             {
-                string sql = "select top 4 name from player where position = 'midfielder' order by performance desc;";
+                string sql = "select top 4 player_name from player where position = 'midfielder' order by performance desc;";
                 return DataAccess.GetDataSet(sql);
             }
             catch (Exception exc)
@@ -189,7 +190,7 @@ namespace FootballClubMS.Repository
         {
             try
             {
-                string sql = "select top 4 name from player where position = 'defender' order by performance desc;";
+                string sql = "select top 4 player_name from player where position = 'defender' order by performance desc;";
                 return DataAccess.GetDataSet(sql);
             }
             catch (Exception exc)
@@ -203,7 +204,7 @@ namespace FootballClubMS.Repository
         {
             try
             {
-                string sql = "select top 1 name from player where position = 'goalkeeper' order by performance desc;";
+                string sql = "select top 1 player_name from player where position = 'goalkeeper' order by performance desc;";
                 return DataAccess.GetDataSet(sql);
             }
             catch (Exception exc)
@@ -218,7 +219,7 @@ namespace FootballClubMS.Repository
         {
             try
             {
-                string sql = "select top 3 name from player where position = 'striker' order by performance desc;";
+                string sql = "select top 3 player_name from player where position = 'striker' order by performance desc;";
                 return DataAccess.GetDataSet(sql);
             }
             catch (Exception exc)
@@ -232,7 +233,7 @@ namespace FootballClubMS.Repository
         {
             try
             {
-                string sql = "select top 3 name from player where position = 'midfielder' order by performance desc;";
+                string sql = "select top 3 player_name from player where position = 'midfielder' order by performance desc;";
                 return DataAccess.GetDataSet(sql);
             }
             catch (Exception exc)

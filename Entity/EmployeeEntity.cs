@@ -18,7 +18,7 @@ namespace FootballClubMS.Entity
         private string designation;
         private string email;
         private double  salary;
-        private static int autoEmployeeId = 0 ;
+        
         public string Id
         {
             get { return this.id; }
@@ -51,22 +51,31 @@ namespace FootballClubMS.Entity
             this.Designation = designation;
             if (Designation.ToLower().Equals("admin"))
             {
-                int temp = EmployeeRepository.GetValueForEmployeeId();
+                int temp = EmployeeRepository.GetValueForEmployeeId() + 1;
                 this.Id = "a-" + temp; 
             }
             else if (Designation.ToLower().Equals("manager"))
             {
-                int temp = EmployeeRepository.GetValueForEmployeeId();
+                int temp = EmployeeRepository.GetValueForEmployeeId() + 1;
                 this.Id = "m-" + temp;
 
             }
 
             else if (Designation.ToLower().Equals("seller"))
             {
-                int temp = EmployeeRepository.GetValueForEmployeeId();
+                int temp = EmployeeRepository.GetValueForEmployeeId() + 1;
                 this.Id = "s-" + temp;
 
             }
+            else
+            {
+                {
+                    int temp = EmployeeRepository.GetValueForEmployeeId() + 1;
+                    this.Id = "e-" + temp;
+
+                }
+            }
+
             this.Email = email;
             this.Salary = salary;           
         }
