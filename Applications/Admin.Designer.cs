@@ -368,6 +368,7 @@
             this.txtEmpSearch.WaterMark = "Search Employee";
             this.txtEmpSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtEmpSearch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtEmpSearch.TextChanged += new System.EventHandler(this.TxtEmpSearch_TextChanged);
             // 
             // metroLabel7
             // 
@@ -457,7 +458,7 @@
             this.dgvEmployee.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEmployee.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmployee.Size = new System.Drawing.Size(568, 291);
+            this.dgvEmployee.Size = new System.Drawing.Size(568, 239);
             this.dgvEmployee.TabIndex = 25;
             // 
             // btnEmpSignUp

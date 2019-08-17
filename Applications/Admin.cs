@@ -40,6 +40,15 @@ namespace FootballClubMS.Applications
 
         }
 
+        public void PopulateGridviewForEmployeeSearched()
+        {
+            this.dgvEmployee.AutoGenerateColumns = false;
+            this.Ds = EmployeeRepository.SearchEmployee(this.txtEmpSearch.Text);
+            this.dgvEmployee.DataSource = this.Ds.Tables[0];
+            
+
+        }
+
         private void Admin_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
@@ -110,6 +119,11 @@ namespace FootballClubMS.Applications
             }
 
 
+        }
+
+        private void TxtEmpSearch_TextChanged(object sender, EventArgs e)
+        {
+            PopulateGridviewForEmployeeSearched();
         }
     }
 }
