@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
@@ -68,6 +68,17 @@
             this.lblEmpId = new MetroFramework.Controls.MetroLabel();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.lblCf1F2 = new MetroFramework.Controls.MetroLabel();
+            this.lblCf2F2 = new MetroFramework.Controls.MetroLabel();
+            this.lblCf3F2 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef3F2 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef1F2 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef2F2 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef4F2 = new MetroFramework.Controls.MetroLabel();
+            this.lblMid1F2 = new MetroFramework.Controls.MetroLabel();
+            this.lblMid3F2 = new MetroFramework.Controls.MetroLabel();
+            this.lblMid2F2 = new MetroFramework.Controls.MetroLabel();
+            this.lblGkF2 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.lblCf1F1 = new MetroFramework.Controls.MetroLabel();
             this.lvlCf2F1 = new MetroFramework.Controls.MetroLabel();
@@ -82,17 +93,6 @@
             this.lblGkF1 = new MetroFramework.Controls.MetroLabel();
             this.btnFormation2 = new System.Windows.Forms.Button();
             this.btnFormation1 = new System.Windows.Forms.Button();
-            this.lblCf1F2 = new MetroFramework.Controls.MetroLabel();
-            this.lblCf2F2 = new MetroFramework.Controls.MetroLabel();
-            this.lblCf3F2 = new MetroFramework.Controls.MetroLabel();
-            this.lblDef3F2 = new MetroFramework.Controls.MetroLabel();
-            this.lblDef1F2 = new MetroFramework.Controls.MetroLabel();
-            this.lblDef2F2 = new MetroFramework.Controls.MetroLabel();
-            this.lblDef4F2 = new MetroFramework.Controls.MetroLabel();
-            this.lblMid1F2 = new MetroFramework.Controls.MetroLabel();
-            this.lblMid3F2 = new MetroFramework.Controls.MetroLabel();
-            this.lblMid2F2 = new MetroFramework.Controls.MetroLabel();
-            this.lblGkF2 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
@@ -126,7 +126,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Location = new System.Drawing.Point(3, 20);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 3;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(900, 411);
             this.metroTabControl1.TabIndex = 2;
             this.metroTabControl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -377,37 +377,37 @@
             this.GridPlayers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridPlayers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridPlayers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlayers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlayers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.GridPlayers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridPlayers.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridPlayers.DefaultCellStyle = dataGridViewCellStyle2;
             this.GridPlayers.EnableHeadersVisualStyles = false;
             this.GridPlayers.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridPlayers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.GridPlayers.Location = new System.Drawing.Point(37, 68);
             this.GridPlayers.Name = "GridPlayers";
             this.GridPlayers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlayers.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlayers.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.GridPlayers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GridPlayers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPlayers.Size = new System.Drawing.Size(494, 318);
@@ -849,6 +849,105 @@
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
             // 
+            // lblCf1F2
+            // 
+            this.lblCf1F2.AutoSize = true;
+            this.lblCf1F2.Location = new System.Drawing.Point(37, 11);
+            this.lblCf1F2.Name = "lblCf1F2";
+            this.lblCf1F2.Size = new System.Drawing.Size(34, 19);
+            this.lblCf1F2.TabIndex = 23;
+            this.lblCf1F2.Text = "LWF";
+            // 
+            // lblCf2F2
+            // 
+            this.lblCf2F2.AutoSize = true;
+            this.lblCf2F2.Location = new System.Drawing.Point(181, 11);
+            this.lblCf2F2.Name = "lblCf2F2";
+            this.lblCf2F2.Size = new System.Drawing.Size(25, 19);
+            this.lblCf2F2.TabIndex = 22;
+            this.lblCf2F2.Text = "CF";
+            // 
+            // lblCf3F2
+            // 
+            this.lblCf3F2.AutoSize = true;
+            this.lblCf3F2.Location = new System.Drawing.Point(343, 11);
+            this.lblCf3F2.Name = "lblCf3F2";
+            this.lblCf3F2.Size = new System.Drawing.Size(37, 19);
+            this.lblCf3F2.TabIndex = 21;
+            this.lblCf3F2.Text = "RWF";
+            // 
+            // lblDef3F2
+            // 
+            this.lblDef3F2.AutoSize = true;
+            this.lblDef3F2.Location = new System.Drawing.Point(20, 178);
+            this.lblDef3F2.Name = "lblDef3F2";
+            this.lblDef3F2.Size = new System.Drawing.Size(23, 19);
+            this.lblDef3F2.TabIndex = 20;
+            this.lblDef3F2.Text = "LB";
+            // 
+            // lblDef1F2
+            // 
+            this.lblDef1F2.AutoSize = true;
+            this.lblDef1F2.Location = new System.Drawing.Point(101, 220);
+            this.lblDef1F2.Name = "lblDef1F2";
+            this.lblDef1F2.Size = new System.Drawing.Size(26, 19);
+            this.lblDef1F2.TabIndex = 19;
+            this.lblDef1F2.Text = "CB";
+            // 
+            // lblDef2F2
+            // 
+            this.lblDef2F2.AutoSize = true;
+            this.lblDef2F2.Location = new System.Drawing.Point(258, 220);
+            this.lblDef2F2.Name = "lblDef2F2";
+            this.lblDef2F2.Size = new System.Drawing.Size(26, 19);
+            this.lblDef2F2.TabIndex = 18;
+            this.lblDef2F2.Text = "CB";
+            // 
+            // lblDef4F2
+            // 
+            this.lblDef4F2.AutoSize = true;
+            this.lblDef4F2.Location = new System.Drawing.Point(343, 188);
+            this.lblDef4F2.Name = "lblDef4F2";
+            this.lblDef4F2.Size = new System.Drawing.Size(25, 19);
+            this.lblDef4F2.TabIndex = 17;
+            this.lblDef4F2.Text = "RB";
+            // 
+            // lblMid1F2
+            // 
+            this.lblMid1F2.AutoSize = true;
+            this.lblMid1F2.Location = new System.Drawing.Point(20, 84);
+            this.lblMid1F2.Name = "lblMid1F2";
+            this.lblMid1F2.Size = new System.Drawing.Size(27, 19);
+            this.lblMid1F2.TabIndex = 16;
+            this.lblMid1F2.Text = "LM";
+            // 
+            // lblMid3F2
+            // 
+            this.lblMid3F2.AutoSize = true;
+            this.lblMid3F2.Location = new System.Drawing.Point(343, 84);
+            this.lblMid3F2.Name = "lblMid3F2";
+            this.lblMid3F2.Size = new System.Drawing.Size(29, 19);
+            this.lblMid3F2.TabIndex = 15;
+            this.lblMid3F2.Text = "RM";
+            // 
+            // lblMid2F2
+            // 
+            this.lblMid2F2.AutoSize = true;
+            this.lblMid2F2.Location = new System.Drawing.Point(181, 123);
+            this.lblMid2F2.Name = "lblMid2F2";
+            this.lblMid2F2.Size = new System.Drawing.Size(37, 19);
+            this.lblMid2F2.TabIndex = 14;
+            this.lblMid2F2.Text = "CMF";
+            // 
+            // lblGkF2
+            // 
+            this.lblGkF2.AutoSize = true;
+            this.lblGkF2.Location = new System.Drawing.Point(194, 282);
+            this.lblGkF2.Name = "lblGkF2";
+            this.lblGkF2.Size = new System.Drawing.Size(24, 19);
+            this.lblGkF2.TabIndex = 13;
+            this.lblGkF2.Text = "Gk";
+            // 
             // metroPanel2
             // 
             this.metroPanel2.Controls.Add(this.lblCf1F1);
@@ -992,105 +1091,6 @@
             this.btnFormation1.Text = "Formation 4-4-2";
             this.btnFormation1.UseVisualStyleBackColor = true;
             // 
-            // lblCf1F2
-            // 
-            this.lblCf1F2.AutoSize = true;
-            this.lblCf1F2.Location = new System.Drawing.Point(37, 11);
-            this.lblCf1F2.Name = "lblCf1F2";
-            this.lblCf1F2.Size = new System.Drawing.Size(34, 19);
-            this.lblCf1F2.TabIndex = 23;
-            this.lblCf1F2.Text = "LWF";
-            // 
-            // lblCf2F2
-            // 
-            this.lblCf2F2.AutoSize = true;
-            this.lblCf2F2.Location = new System.Drawing.Point(181, 11);
-            this.lblCf2F2.Name = "lblCf2F2";
-            this.lblCf2F2.Size = new System.Drawing.Size(25, 19);
-            this.lblCf2F2.TabIndex = 22;
-            this.lblCf2F2.Text = "CF";
-            // 
-            // lblCf3F2
-            // 
-            this.lblCf3F2.AutoSize = true;
-            this.lblCf3F2.Location = new System.Drawing.Point(343, 11);
-            this.lblCf3F2.Name = "lblCf3F2";
-            this.lblCf3F2.Size = new System.Drawing.Size(37, 19);
-            this.lblCf3F2.TabIndex = 21;
-            this.lblCf3F2.Text = "RWF";
-            // 
-            // lblDef3F2
-            // 
-            this.lblDef3F2.AutoSize = true;
-            this.lblDef3F2.Location = new System.Drawing.Point(20, 178);
-            this.lblDef3F2.Name = "lblDef3F2";
-            this.lblDef3F2.Size = new System.Drawing.Size(23, 19);
-            this.lblDef3F2.TabIndex = 20;
-            this.lblDef3F2.Text = "LB";
-            // 
-            // lblDef1F2
-            // 
-            this.lblDef1F2.AutoSize = true;
-            this.lblDef1F2.Location = new System.Drawing.Point(101, 220);
-            this.lblDef1F2.Name = "lblDef1F2";
-            this.lblDef1F2.Size = new System.Drawing.Size(26, 19);
-            this.lblDef1F2.TabIndex = 19;
-            this.lblDef1F2.Text = "CB";
-            // 
-            // lblDef2F2
-            // 
-            this.lblDef2F2.AutoSize = true;
-            this.lblDef2F2.Location = new System.Drawing.Point(258, 220);
-            this.lblDef2F2.Name = "lblDef2F2";
-            this.lblDef2F2.Size = new System.Drawing.Size(26, 19);
-            this.lblDef2F2.TabIndex = 18;
-            this.lblDef2F2.Text = "CB";
-            // 
-            // lblDef4F2
-            // 
-            this.lblDef4F2.AutoSize = true;
-            this.lblDef4F2.Location = new System.Drawing.Point(343, 188);
-            this.lblDef4F2.Name = "lblDef4F2";
-            this.lblDef4F2.Size = new System.Drawing.Size(25, 19);
-            this.lblDef4F2.TabIndex = 17;
-            this.lblDef4F2.Text = "RB";
-            // 
-            // lblMid1F2
-            // 
-            this.lblMid1F2.AutoSize = true;
-            this.lblMid1F2.Location = new System.Drawing.Point(20, 84);
-            this.lblMid1F2.Name = "lblMid1F2";
-            this.lblMid1F2.Size = new System.Drawing.Size(27, 19);
-            this.lblMid1F2.TabIndex = 16;
-            this.lblMid1F2.Text = "LM";
-            // 
-            // lblMid3F2
-            // 
-            this.lblMid3F2.AutoSize = true;
-            this.lblMid3F2.Location = new System.Drawing.Point(343, 84);
-            this.lblMid3F2.Name = "lblMid3F2";
-            this.lblMid3F2.Size = new System.Drawing.Size(29, 19);
-            this.lblMid3F2.TabIndex = 15;
-            this.lblMid3F2.Text = "RM";
-            // 
-            // lblMid2F2
-            // 
-            this.lblMid2F2.AutoSize = true;
-            this.lblMid2F2.Location = new System.Drawing.Point(181, 123);
-            this.lblMid2F2.Name = "lblMid2F2";
-            this.lblMid2F2.Size = new System.Drawing.Size(37, 19);
-            this.lblMid2F2.TabIndex = 14;
-            this.lblMid2F2.Text = "CMF";
-            // 
-            // lblGkF2
-            // 
-            this.lblGkF2.AutoSize = true;
-            this.lblGkF2.Location = new System.Drawing.Point(194, 282);
-            this.lblGkF2.Name = "lblGkF2";
-            this.lblGkF2.Size = new System.Drawing.Size(24, 19);
-            this.lblGkF2.TabIndex = 13;
-            this.lblGkF2.Text = "Gk";
-            // 
             // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1099,6 +1099,7 @@
             this.Controls.Add(this.metroPanel1);
             this.Name = "Manager";
             this.Text = "Manager";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Manager_FormClosing);
             this.metroPanel1.ResumeLayout(false);
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);

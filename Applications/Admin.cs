@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FootballClubMS.Entity;
 using FootballClubMS.Repository;
-
+using FootballClubMS.Framework;
 namespace FootballClubMS.Applications
 {
     public partial class Admin : MetroFramework.Forms.MetroForm
@@ -37,17 +37,40 @@ namespace FootballClubMS.Applications
 
         private void BtnChangePassword_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Ds = LoginRepository.
-                if(this.txtOldPassword.Text == Ds.Tables[0].Rows["id"])
 
-            }
-            catch (Exception ex)
-            {
+             try
+             {
                 
-                MessageBox.Show(ex.Message);
-            }
+                if (Validation.IsStringValid(this.txtOldPassword.ToString()) == true && Validation.IsStringValid(this.txtNewPassword.ToString()) == true)
+                 {
+
+
+                    LoginEntity le = new LoginEntity(this.ea.Id, this.txtOldPassword.Text.ToString());
+                    bool check = LoginRepository.SearchUser(le);
+                    if (this.Ds.Tables[0].Rows.Count == 1)
+                    {
+                        LoginRepository.UpdateUserPassword(le, this.txtNewPassword.Text.ToString());
+                        MessageBox.Show("Password updated");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Insert Correct password");
+                    }
+                 }
+                else
+                {
+                     MessageBox.Show("Insert Password");
+                }
+
+
+             }
+             catch (Exception ex)
+             {
+
+                 MessageBox.Show(ex.Message);
+             }
+             
         }
     }
 }

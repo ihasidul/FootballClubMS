@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FootballClubMS.Framework;
 using FootballClubMS.Entity;
-using System.Data;
-using FootballClubMS.Data;
+using FootballClubMS.Repository;
+
 
 namespace FootballClubMS.Applications
 {
@@ -27,11 +27,11 @@ namespace FootballClubMS.Applications
             if (Validation.IsStringValid(this.txtId.ToString()))
             {
                 LoginEntity le = new LoginEntity(this.txtId.Text.ToString(), this.txtPassword.Text.ToString());
-                string sql = "select * from login where id ='"+le.Id+"'and password = '"+le.Password+"';";
+
+
+                bool check = LoginRepository.SearchUser(le);
                 
-                this.Ds = DataAccess.GetDataSet(sql);
-                
-                if (this.Ds.Tables[0].Rows.Count == 1)
+                if (check)
                 {
                     
                     string[] words = this.txtId.Text.Split('-');
