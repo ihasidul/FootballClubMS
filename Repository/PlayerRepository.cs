@@ -124,5 +124,123 @@ namespace FootballClubMS.Repository
                 return null;
             }
         }
+
+        //for player position
+        public static DataSet GetPlayerPosition(string text)
+        {
+            try
+            {
+                string sql = "select position from player where id = '" + text + "';";
+                return DataAccess.GetDataSet(sql);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error: " + exc.Message);
+                return null;
+            }
+        }
+        //for set performance
+        public static void SetPlayerPerformance(double performance, string text)
+        {
+            try
+            {
+                string sql = "select performance from player where id = '" + text + "';";
+                Ds = DataAccess.GetDataSet(sql);
+                double previousPerformance = Convert.ToInt32(Ds.Tables[0].Rows[0][0].ToString());
+                double currentPerformance = (performance + previousPerformance) / 2;
+                sql = "update player SET performance = TRY_CONVERT(float,'" + currentPerformance + "') where id = '" + text + "';";
+                DataAccess.GetDataSet(sql);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error: " + exc.Message);
+            }
+        }
+        //find top 2 striker with performance
+        public static DataSet GetStrikerInFormation1()
+        {
+            try
+            {
+                string sql = "select top 2 name from player where position = 'striker' order by performance desc;";
+                return DataAccess.GetDataSet(sql);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error: " + exc.Message);
+                return null;
+            }
+        }
+        //find top 4 midfielder with performance
+        public static DataSet GetMidfielderInFormation1()
+        {
+            try
+            {
+                string sql = "select top 4 name from player where position = 'midfielder' order by performance desc;";
+                return DataAccess.GetDataSet(sql);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error: " + exc.Message);
+                return null;
+            }
+        }
+        //find top 4 defender with performance
+        public static DataSet GetDefender()
+        {
+            try
+            {
+                string sql = "select top 4 name from player where position = 'defender' order by performance desc;";
+                return DataAccess.GetDataSet(sql);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error: " + exc.Message);
+                return null;
+            }
+        }
+        //find top goalkeeper with performance
+        public static DataSet GetGoalkeeper()
+        {
+            try
+            {
+                string sql = "select top 1 name from player where position = 'goalkeeper' order by performance desc;";
+                return DataAccess.GetDataSet(sql);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error: " + exc.Message);
+                return null;
+            }
+        }
+
+        //find top 3 striker with performance
+        public static DataSet GetStrikerInFormation2()
+        {
+            try
+            {
+                string sql = "select top 3 name from player where position = 'striker' order by performance desc;";
+                return DataAccess.GetDataSet(sql);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error: " + exc.Message);
+                return null;
+            }
+        }
+        //find top 3 midfielder with performance
+        public static DataSet GetMidfielderInFormation2()
+        {
+            try
+            {
+                string sql = "select top 3 name from player where position = 'midfielder' order by performance desc;";
+                return DataAccess.GetDataSet(sql);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error: " + exc.Message);
+                return null;
+            }
+        }
+
     }
 }

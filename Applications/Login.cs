@@ -26,18 +26,16 @@ namespace FootballClubMS.Applications
         {
             if (Validation.IsStringValid(this.txtId.ToString()))
             {
-                LoginEntity le = new LoginEntity(this.txtId.ToString(), this.txtPassword.ToString());
-                string sql = "select * from login where id ='"+this.txtId+ "'and password = '"+this.txtPassword+"';";
-                //Ds = DataAccess.GetDataSet(sql);
-                //Ds.Tables[0].Rows[0]["id"].ToString() == this.txtId.ToString() && Ds.Tables[0].Rows[0]["password"].ToString() == this.txtPassword.ToString()
-                //DataTable dtbl = new DataTable();
-                //dtbl = DataAccess.GetDataTable(sql);
+                LoginEntity le = new LoginEntity(this.txtId.Text.ToString(), this.txtPassword.Text.ToString());
+                string sql = "select * from login where id ='"+le.Id+"'and password = '"+le.Password+"';";
+                
                 this.Ds = DataAccess.GetDataSet(sql);
                 
                 if (this.Ds.Tables[0].Rows.Count == 1)
                 {
-                    string[] words = this.txtId.ToString().Split('-');
-                    Console.Out.WriteLine(words[0]);
+                    
+                    string[] words = this.txtId.Text.Split('-');
+                    MessageBox.Show( words[0].ToString());
                     if (words[0] == "a")//He is an Admin
                     {
                         this.Visible = false;
@@ -79,6 +77,11 @@ namespace FootballClubMS.Applications
             {
                 MessageBox.Show("Insert Id");
             }
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
