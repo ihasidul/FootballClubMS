@@ -26,5 +26,10 @@ namespace FootballClubMS.Framework
             else
                 return false;
         }
+
+        public static bool IsTheStringDouble(string text)
+        {
+            
+        }
     }
 }

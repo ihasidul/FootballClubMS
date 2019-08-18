@@ -99,6 +99,7 @@ namespace FootballClubMS.Applications
                 if (Validation.IsStringValid(this.txtEmpName.ToString()) == true && Validation.IsStringValid(this.txtEmpDesignation.ToString()) == true &&
                     Validation.IsStringValid(this.txtEmpEmail.ToString()) == true && Validation.IsStringValid(this.txtEmpSalary.ToString()) == true)
                 {
+
                     double salary = Convert.ToDouble(this.txtEmpSalary.Text.ToString());
                     EmployeeEntity te = new EmployeeEntity(this.txtEmpName.Text, this.txtEmpDesignation.Text, this.txtEmpEmail.Text, salary);
                     EmployeeRepository.InsertEmployee(te);
@@ -129,7 +130,9 @@ namespace FootballClubMS.Applications
 
         private void DgvEmployee_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.txtEmpName.Text = this.dgvEmployee.CurrentRow.Cells["emp_name"].Value.ToString();
+            this.btnEmpSignUp.Enabled = false;
+            this.btnEmployeeDelete.Enabled = true;
+            this.txtEmpName.Text = this.dgvEmployee.CurrentRow.Cells["emp_name"].Value.ToString(); 
             this.txtEmpDesignation.Text = this.dgvEmployee.CurrentRow.Cells["designation"].Value.ToString();
             this.txtEmpEmail.Text = this.dgvEmployee.CurrentRow.Cells["emp_email"].Value.ToString();
             this.txtEmpSalary.Text = this.dgvEmployee.CurrentRow.Cells["salary"].Value.ToString();
@@ -141,13 +144,37 @@ namespace FootballClubMS.Applications
             {
                 MessageBox.Show("Admin can not delete himself.");
                 PopulateGridviewForEmployee();
+                this.btnEmployeeDelete.Enabled = false;
+                this.txtEmpName.Text = "";
+                this.txtEmpDesignation.Text = "";
+                this.txtEmpEmail.Text = "";
+                this.txtEmpSalary.Text = "";
+                this.btnEmpSignUp.Enabled = true;
             }
             else
             {
                 EmployeeRepository.DeleteEmployee(this.dgvEmployee.CurrentRow.Cells["emp_id"].Value.ToString());
                 PopulateGridviewForEmployee();
+                this.btnEmployeeDelete.Enabled = false;
+                this.txtEmpName.Text = "";
+                this.txtEmpDesignation.Text = "";
+                this.txtEmpEmail.Text = "";
+                this.txtEmpSalary.Text = "";
+                this.btnEmpSignUp.Enabled = true;
             }
             
         }
+
+        private void MetroButton1_Click(object sender, EventArgs e)
+        {
+            this.btnEmployeeDelete.Enabled = false;
+            this.txtEmpName.Text = "";
+            this.txtEmpDesignation.Text = "";
+            this.txtEmpEmail.Text = "";
+            this.txtEmpSalary.Text = "";
+            this.btnEmpSignUp.Enabled = true;
+        }
+
+       
     }
 }

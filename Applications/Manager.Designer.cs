@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
@@ -66,8 +66,21 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.lblEmpId = new MetroFramework.Controls.MetroLabel();
-            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
-            this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.pnlFormation3 = new MetroFramework.Controls.MetroPanel();
+            this.lblCf1F3 = new MetroFramework.Controls.MetroLabel();
+            this.lblMid2F3 = new MetroFramework.Controls.MetroLabel();
+            this.lblMid3F3 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef1F3 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef2F3 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef4F3 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef5F3 = new MetroFramework.Controls.MetroLabel();
+            this.lblMid1F3 = new MetroFramework.Controls.MetroLabel();
+            this.lblMid4F3 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef3F3 = new MetroFramework.Controls.MetroLabel();
+            this.lblGkF3 = new MetroFramework.Controls.MetroLabel();
+            this.pnlFormation1 = new MetroFramework.Controls.MetroPanel();
+            this.pnlFormation2 = new MetroFramework.Controls.MetroPanel();
             this.lblCf1F2 = new MetroFramework.Controls.MetroLabel();
             this.lblCf2F2 = new MetroFramework.Controls.MetroLabel();
             this.lblCf3F2 = new MetroFramework.Controls.MetroLabel();
@@ -79,7 +92,6 @@
             this.lblMid3F2 = new MetroFramework.Controls.MetroLabel();
             this.lblMid2F2 = new MetroFramework.Controls.MetroLabel();
             this.lblGkF2 = new MetroFramework.Controls.MetroLabel();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
             this.lblCf1F1 = new MetroFramework.Controls.MetroLabel();
             this.lvlCf2F1 = new MetroFramework.Controls.MetroLabel();
             this.lblMid1F1 = new MetroFramework.Controls.MetroLabel();
@@ -91,17 +103,44 @@
             this.lblMid4F1 = new MetroFramework.Controls.MetroLabel();
             this.lblMid2F1 = new MetroFramework.Controls.MetroLabel();
             this.lblGkF1 = new MetroFramework.Controls.MetroLabel();
-            this.btnFormation2 = new System.Windows.Forms.Button();
-            this.btnFormation1 = new System.Windows.Forms.Button();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.cmbFormation = new MetroFramework.Controls.MetroComboBox();
+            this.pnlFormation4 = new MetroFramework.Controls.MetroPanel();
+            this.lblCf1F4 = new MetroFramework.Controls.MetroLabel();
+            this.lblMid1F4 = new MetroFramework.Controls.MetroLabel();
+            this.lblCf2F4 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef3F4 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef5F4 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef2F4 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef1F4 = new MetroFramework.Controls.MetroLabel();
+            this.lblMid3F4 = new MetroFramework.Controls.MetroLabel();
+            this.lblMid2F4 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef4F4 = new MetroFramework.Controls.MetroLabel();
+            this.lblGkF4 = new MetroFramework.Controls.MetroLabel();
+            this.pnlFormation5 = new MetroFramework.Controls.MetroPanel();
+            this.lblCf1F5 = new MetroFramework.Controls.MetroLabel();
+            this.lblMid2F5 = new MetroFramework.Controls.MetroLabel();
+            this.lblCf2F5 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef1F5 = new MetroFramework.Controls.MetroLabel();
+            this.lblMid4F5 = new MetroFramework.Controls.MetroLabel();
+            this.lblMid5F5 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef3F5 = new MetroFramework.Controls.MetroLabel();
+            this.lblMid1F5 = new MetroFramework.Controls.MetroLabel();
+            this.lblMid3F5 = new MetroFramework.Controls.MetroLabel();
+            this.lblDef2F5 = new MetroFramework.Controls.MetroLabel();
+            this.lblGkF5 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridPlayers)).BeginInit();
             this.metroTabPage2.SuspendLayout();
-            this.metroTabPage3.SuspendLayout();
-            this.metroPanel3.SuspendLayout();
-            this.metroPanel2.SuspendLayout();
+            this.metroTabPage4.SuspendLayout();
+            this.pnlFormation3.SuspendLayout();
+            this.pnlFormation1.SuspendLayout();
+            this.pnlFormation2.SuspendLayout();
+            this.pnlFormation4.SuspendLayout();
+            this.pnlFormation5.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel1
@@ -123,10 +162,10 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage5);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
-            this.metroTabControl1.Controls.Add(this.metroTabPage3);
+            this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Location = new System.Drawing.Point(3, 20);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 3;
             this.metroTabControl1.Size = new System.Drawing.Size(900, 411);
             this.metroTabControl1.TabIndex = 2;
             this.metroTabControl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -377,37 +416,37 @@
             this.GridPlayers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.GridPlayers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.GridPlayers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlayers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlayers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.GridPlayers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GridPlayers.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridPlayers.DefaultCellStyle = dataGridViewCellStyle8;
             this.GridPlayers.EnableHeadersVisualStyles = false;
             this.GridPlayers.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridPlayers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.GridPlayers.Location = new System.Drawing.Point(37, 68);
             this.GridPlayers.Name = "GridPlayers";
             this.GridPlayers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GridPlayers.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridPlayers.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.GridPlayers.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GridPlayers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridPlayers.Size = new System.Drawing.Size(494, 318);
@@ -807,47 +846,196 @@
             this.lblEmpId.TabIndex = 28;
             this.lblEmpId.Text = "ID";
             // 
-            // metroTabPage3
+            // metroTabPage4
             // 
-            this.metroTabPage3.Controls.Add(this.metroPanel3);
-            this.metroTabPage3.Controls.Add(this.metroPanel2);
-            this.metroTabPage3.Controls.Add(this.btnFormation2);
-            this.metroTabPage3.Controls.Add(this.btnFormation1);
-            this.metroTabPage3.HorizontalScrollbarBarColor = true;
-            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.HorizontalScrollbarSize = 10;
-            this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(892, 369);
-            this.metroTabPage3.TabIndex = 6;
-            this.metroTabPage3.Text = "Squad Generator";
-            this.metroTabPage3.VerticalScrollbarBarColor = true;
-            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.VerticalScrollbarSize = 10;
+            this.metroTabPage4.Controls.Add(this.pnlFormation1);
+            this.metroTabPage4.Controls.Add(this.metroLabel8);
+            this.metroTabPage4.Controls.Add(this.cmbFormation);
+            this.metroTabPage4.HorizontalScrollbarBarColor = true;
+            this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage4.HorizontalScrollbarSize = 10;
+            this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage4.Name = "metroTabPage4";
+            this.metroTabPage4.Size = new System.Drawing.Size(892, 369);
+            this.metroTabPage4.TabIndex = 7;
+            this.metroTabPage4.Text = "Squad Generator";
+            this.metroTabPage4.VerticalScrollbarBarColor = true;
+            this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage4.VerticalScrollbarSize = 10;
             // 
-            // metroPanel3
+            // pnlFormation3
             // 
-            this.metroPanel3.Controls.Add(this.lblCf1F2);
-            this.metroPanel3.Controls.Add(this.lblCf2F2);
-            this.metroPanel3.Controls.Add(this.lblCf3F2);
-            this.metroPanel3.Controls.Add(this.lblDef3F2);
-            this.metroPanel3.Controls.Add(this.lblDef1F2);
-            this.metroPanel3.Controls.Add(this.lblDef2F2);
-            this.metroPanel3.Controls.Add(this.lblDef4F2);
-            this.metroPanel3.Controls.Add(this.lblMid1F2);
-            this.metroPanel3.Controls.Add(this.lblMid3F2);
-            this.metroPanel3.Controls.Add(this.lblMid2F2);
-            this.metroPanel3.Controls.Add(this.lblGkF2);
-            this.metroPanel3.HorizontalScrollbarBarColor = true;
-            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel3.HorizontalScrollbarSize = 10;
-            this.metroPanel3.Location = new System.Drawing.Point(468, 59);
-            this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(397, 301);
-            this.metroPanel3.TabIndex = 5;
-            this.metroPanel3.VerticalScrollbarBarColor = true;
-            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel3.VerticalScrollbarSize = 10;
+            this.pnlFormation3.Controls.Add(this.pnlFormation4);
+            this.pnlFormation3.Controls.Add(this.lblCf1F3);
+            this.pnlFormation3.Controls.Add(this.lblMid2F3);
+            this.pnlFormation3.Controls.Add(this.lblMid3F3);
+            this.pnlFormation3.Controls.Add(this.lblDef1F3);
+            this.pnlFormation3.Controls.Add(this.lblDef2F3);
+            this.pnlFormation3.Controls.Add(this.lblDef4F3);
+            this.pnlFormation3.Controls.Add(this.lblDef5F3);
+            this.pnlFormation3.Controls.Add(this.lblMid1F3);
+            this.pnlFormation3.Controls.Add(this.lblMid4F3);
+            this.pnlFormation3.Controls.Add(this.lblDef3F3);
+            this.pnlFormation3.Controls.Add(this.lblGkF3);
+            this.pnlFormation3.HorizontalScrollbarBarColor = true;
+            this.pnlFormation3.HorizontalScrollbarHighlightOnWheel = false;
+            this.pnlFormation3.HorizontalScrollbarSize = 10;
+            this.pnlFormation3.Location = new System.Drawing.Point(3, 3);
+            this.pnlFormation3.Name = "pnlFormation3";
+            this.pnlFormation3.Size = new System.Drawing.Size(451, 353);
+            this.pnlFormation3.TabIndex = 7;
+            this.pnlFormation3.VerticalScrollbarBarColor = true;
+            this.pnlFormation3.VerticalScrollbarHighlightOnWheel = false;
+            this.pnlFormation3.VerticalScrollbarSize = 10;
+            // 
+            // lblCf1F3
+            // 
+            this.lblCf1F3.AutoSize = true;
+            this.lblCf1F3.Location = new System.Drawing.Point(207, 23);
+            this.lblCf1F3.Name = "lblCf1F3";
+            this.lblCf1F3.Size = new System.Drawing.Size(25, 19);
+            this.lblCf1F3.TabIndex = 23;
+            this.lblCf1F3.Text = "CF";
+            // 
+            // lblMid2F3
+            // 
+            this.lblMid2F3.AutoSize = true;
+            this.lblMid2F3.Location = new System.Drawing.Point(127, 123);
+            this.lblMid2F3.Name = "lblMid2F3";
+            this.lblMid2F3.Size = new System.Drawing.Size(37, 19);
+            this.lblMid2F3.TabIndex = 22;
+            this.lblMid2F3.Text = "AMF";
+            // 
+            // lblMid3F3
+            // 
+            this.lblMid3F3.AutoSize = true;
+            this.lblMid3F3.Location = new System.Drawing.Point(277, 123);
+            this.lblMid3F3.Name = "lblMid3F3";
+            this.lblMid3F3.Size = new System.Drawing.Size(37, 19);
+            this.lblMid3F3.TabIndex = 21;
+            this.lblMid3F3.Text = "AMF";
+            // 
+            // lblDef1F3
+            // 
+            this.lblDef1F3.AutoSize = true;
+            this.lblDef1F3.Location = new System.Drawing.Point(3, 194);
+            this.lblDef1F3.Name = "lblDef1F3";
+            this.lblDef1F3.Size = new System.Drawing.Size(23, 19);
+            this.lblDef1F3.TabIndex = 20;
+            this.lblDef1F3.Text = "LB";
+            // 
+            // lblDef2F3
+            // 
+            this.lblDef2F3.AutoSize = true;
+            this.lblDef2F3.Location = new System.Drawing.Point(102, 245);
+            this.lblDef2F3.Name = "lblDef2F3";
+            this.lblDef2F3.Size = new System.Drawing.Size(26, 19);
+            this.lblDef2F3.TabIndex = 19;
+            this.lblDef2F3.Text = "CB";
+            // 
+            // lblDef4F3
+            // 
+            this.lblDef4F3.AutoSize = true;
+            this.lblDef4F3.Location = new System.Drawing.Point(305, 236);
+            this.lblDef4F3.Name = "lblDef4F3";
+            this.lblDef4F3.Size = new System.Drawing.Size(26, 19);
+            this.lblDef4F3.TabIndex = 18;
+            this.lblDef4F3.Text = "CB";
+            // 
+            // lblDef5F3
+            // 
+            this.lblDef5F3.AutoSize = true;
+            this.lblDef5F3.Location = new System.Drawing.Point(421, 194);
+            this.lblDef5F3.Name = "lblDef5F3";
+            this.lblDef5F3.Size = new System.Drawing.Size(25, 19);
+            this.lblDef5F3.TabIndex = 17;
+            this.lblDef5F3.Text = "RB";
+            // 
+            // lblMid1F3
+            // 
+            this.lblMid1F3.AutoSize = true;
+            this.lblMid1F3.Location = new System.Drawing.Point(3, 107);
+            this.lblMid1F3.Name = "lblMid1F3";
+            this.lblMid1F3.Size = new System.Drawing.Size(27, 19);
+            this.lblMid1F3.TabIndex = 16;
+            this.lblMid1F3.Text = "LM";
+            // 
+            // lblMid4F3
+            // 
+            this.lblMid4F3.AutoSize = true;
+            this.lblMid4F3.Location = new System.Drawing.Point(410, 107);
+            this.lblMid4F3.Name = "lblMid4F3";
+            this.lblMid4F3.Size = new System.Drawing.Size(29, 19);
+            this.lblMid4F3.TabIndex = 15;
+            this.lblMid4F3.Text = "RM";
+            // 
+            // lblDef3F3
+            // 
+            this.lblDef3F3.AutoSize = true;
+            this.lblDef3F3.Location = new System.Drawing.Point(207, 207);
+            this.lblDef3F3.Name = "lblDef3F3";
+            this.lblDef3F3.Size = new System.Drawing.Size(26, 19);
+            this.lblDef3F3.TabIndex = 14;
+            this.lblDef3F3.Text = "CB";
+            // 
+            // lblGkF3
+            // 
+            this.lblGkF3.AutoSize = true;
+            this.lblGkF3.Location = new System.Drawing.Point(207, 301);
+            this.lblGkF3.Name = "lblGkF3";
+            this.lblGkF3.Size = new System.Drawing.Size(24, 19);
+            this.lblGkF3.TabIndex = 13;
+            this.lblGkF3.Text = "Gk";
+            // 
+            // pnlFormation1
+            // 
+            this.pnlFormation1.Controls.Add(this.pnlFormation2);
+            this.pnlFormation1.Controls.Add(this.lblCf1F1);
+            this.pnlFormation1.Controls.Add(this.lvlCf2F1);
+            this.pnlFormation1.Controls.Add(this.lblMid1F1);
+            this.pnlFormation1.Controls.Add(this.lblDef4F1);
+            this.pnlFormation1.Controls.Add(this.lblDef1F1);
+            this.pnlFormation1.Controls.Add(this.lbldef2F1);
+            this.pnlFormation1.Controls.Add(this.lbldef3F1);
+            this.pnlFormation1.Controls.Add(this.lblMid3F1);
+            this.pnlFormation1.Controls.Add(this.lblMid4F1);
+            this.pnlFormation1.Controls.Add(this.lblMid2F1);
+            this.pnlFormation1.Controls.Add(this.lblGkF1);
+            this.pnlFormation1.HorizontalScrollbarBarColor = true;
+            this.pnlFormation1.HorizontalScrollbarHighlightOnWheel = false;
+            this.pnlFormation1.HorizontalScrollbarSize = 10;
+            this.pnlFormation1.Location = new System.Drawing.Point(415, 18);
+            this.pnlFormation1.Name = "pnlFormation1";
+            this.pnlFormation1.Size = new System.Drawing.Size(454, 355);
+            this.pnlFormation1.TabIndex = 5;
+            this.pnlFormation1.VerticalScrollbarBarColor = true;
+            this.pnlFormation1.VerticalScrollbarHighlightOnWheel = false;
+            this.pnlFormation1.VerticalScrollbarSize = 10;
+            // 
+            // pnlFormation2
+            // 
+            this.pnlFormation2.Controls.Add(this.pnlFormation3);
+            this.pnlFormation2.Controls.Add(this.lblCf1F2);
+            this.pnlFormation2.Controls.Add(this.lblCf2F2);
+            this.pnlFormation2.Controls.Add(this.lblCf3F2);
+            this.pnlFormation2.Controls.Add(this.lblDef3F2);
+            this.pnlFormation2.Controls.Add(this.lblDef1F2);
+            this.pnlFormation2.Controls.Add(this.lblDef2F2);
+            this.pnlFormation2.Controls.Add(this.lblDef4F2);
+            this.pnlFormation2.Controls.Add(this.lblMid1F2);
+            this.pnlFormation2.Controls.Add(this.lblMid3F2);
+            this.pnlFormation2.Controls.Add(this.lblMid2F2);
+            this.pnlFormation2.Controls.Add(this.lblGkF2);
+            this.pnlFormation2.HorizontalScrollbarBarColor = true;
+            this.pnlFormation2.HorizontalScrollbarHighlightOnWheel = false;
+            this.pnlFormation2.HorizontalScrollbarSize = 10;
+            this.pnlFormation2.Location = new System.Drawing.Point(3, 4);
+            this.pnlFormation2.Name = "pnlFormation2";
+            this.pnlFormation2.Size = new System.Drawing.Size(451, 353);
+            this.pnlFormation2.TabIndex = 6;
+            this.pnlFormation2.VerticalScrollbarBarColor = true;
+            this.pnlFormation2.VerticalScrollbarHighlightOnWheel = false;
+            this.pnlFormation2.VerticalScrollbarSize = 10;
             // 
             // lblCf1F2
             // 
@@ -948,30 +1136,6 @@
             this.lblGkF2.TabIndex = 13;
             this.lblGkF2.Text = "Gk";
             // 
-            // metroPanel2
-            // 
-            this.metroPanel2.Controls.Add(this.lblCf1F1);
-            this.metroPanel2.Controls.Add(this.lvlCf2F1);
-            this.metroPanel2.Controls.Add(this.lblMid1F1);
-            this.metroPanel2.Controls.Add(this.lblDef4F1);
-            this.metroPanel2.Controls.Add(this.lblDef1F1);
-            this.metroPanel2.Controls.Add(this.lbldef2F1);
-            this.metroPanel2.Controls.Add(this.lbldef3F1);
-            this.metroPanel2.Controls.Add(this.lblMid3F1);
-            this.metroPanel2.Controls.Add(this.lblMid4F1);
-            this.metroPanel2.Controls.Add(this.lblMid2F1);
-            this.metroPanel2.Controls.Add(this.lblGkF1);
-            this.metroPanel2.HorizontalScrollbarBarColor = true;
-            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(50, 59);
-            this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(375, 301);
-            this.metroPanel2.TabIndex = 4;
-            this.metroPanel2.VerticalScrollbarBarColor = true;
-            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 10;
-            // 
             // lblCf1F1
             // 
             this.lblCf1F1.AutoSize = true;
@@ -1071,25 +1235,279 @@
             this.lblGkF1.TabIndex = 2;
             this.lblGkF1.Text = "Gk";
             // 
-            // btnFormation2
+            // metroLabel8
             // 
-            this.btnFormation2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFormation2.Location = new System.Drawing.Point(578, 3);
-            this.btnFormation2.Name = "btnFormation2";
-            this.btnFormation2.Size = new System.Drawing.Size(133, 46);
-            this.btnFormation2.TabIndex = 3;
-            this.btnFormation2.Text = "Formation 4-3-3";
-            this.btnFormation2.UseVisualStyleBackColor = true;
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel8.Location = new System.Drawing.Point(3, 18);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(159, 25);
+            this.metroLabel8.TabIndex = 3;
+            this.metroLabel8.Text = "Choose Formation";
             // 
-            // btnFormation1
+            // cmbFormation
             // 
-            this.btnFormation1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFormation1.Location = new System.Drawing.Point(147, 3);
-            this.btnFormation1.Name = "btnFormation1";
-            this.btnFormation1.Size = new System.Drawing.Size(133, 50);
-            this.btnFormation1.TabIndex = 2;
-            this.btnFormation1.Text = "Formation 4-4-2";
-            this.btnFormation1.UseVisualStyleBackColor = true;
+            this.cmbFormation.FormattingEnabled = true;
+            this.cmbFormation.ItemHeight = 23;
+            this.cmbFormation.Items.AddRange(new object[] {
+            "4-4-2",
+            "4-3-3",
+            "5-4-1",
+            "5-3-2",
+            "3-5-2"});
+            this.cmbFormation.Location = new System.Drawing.Point(186, 18);
+            this.cmbFormation.Name = "cmbFormation";
+            this.cmbFormation.Size = new System.Drawing.Size(121, 29);
+            this.cmbFormation.TabIndex = 2;
+            this.cmbFormation.UseSelectable = true;
+            // 
+            // pnlFormation4
+            // 
+            this.pnlFormation4.Controls.Add(this.pnlFormation5);
+            this.pnlFormation4.Controls.Add(this.lblCf1F4);
+            this.pnlFormation4.Controls.Add(this.lblMid1F4);
+            this.pnlFormation4.Controls.Add(this.lblCf2F4);
+            this.pnlFormation4.Controls.Add(this.lblDef3F4);
+            this.pnlFormation4.Controls.Add(this.lblDef5F4);
+            this.pnlFormation4.Controls.Add(this.lblDef2F4);
+            this.pnlFormation4.Controls.Add(this.lblDef1F4);
+            this.pnlFormation4.Controls.Add(this.lblMid3F4);
+            this.pnlFormation4.Controls.Add(this.lblMid2F4);
+            this.pnlFormation4.Controls.Add(this.lblDef4F4);
+            this.pnlFormation4.Controls.Add(this.lblGkF4);
+            this.pnlFormation4.HorizontalScrollbarBarColor = true;
+            this.pnlFormation4.HorizontalScrollbarHighlightOnWheel = false;
+            this.pnlFormation4.HorizontalScrollbarSize = 10;
+            this.pnlFormation4.Location = new System.Drawing.Point(2, 4);
+            this.pnlFormation4.Name = "pnlFormation4";
+            this.pnlFormation4.Size = new System.Drawing.Size(451, 353);
+            this.pnlFormation4.TabIndex = 8;
+            this.pnlFormation4.VerticalScrollbarBarColor = true;
+            this.pnlFormation4.VerticalScrollbarHighlightOnWheel = false;
+            this.pnlFormation4.VerticalScrollbarSize = 10;
+            // 
+            // lblCf1F4
+            // 
+            this.lblCf1F4.AutoSize = true;
+            this.lblCf1F4.Location = new System.Drawing.Point(127, 23);
+            this.lblCf1F4.Name = "lblCf1F4";
+            this.lblCf1F4.Size = new System.Drawing.Size(25, 19);
+            this.lblCf1F4.TabIndex = 23;
+            this.lblCf1F4.Text = "CF";
+            // 
+            // lblMid1F4
+            // 
+            this.lblMid1F4.AutoSize = true;
+            this.lblMid1F4.Location = new System.Drawing.Point(207, 116);
+            this.lblMid1F4.Name = "lblMid1F4";
+            this.lblMid1F4.Size = new System.Drawing.Size(37, 19);
+            this.lblMid1F4.TabIndex = 22;
+            this.lblMid1F4.Text = "AMF";
+            // 
+            // lblCf2F4
+            // 
+            this.lblCf2F4.AutoSize = true;
+            this.lblCf2F4.Location = new System.Drawing.Point(264, 23);
+            this.lblCf2F4.Name = "lblCf2F4";
+            this.lblCf2F4.Size = new System.Drawing.Size(25, 19);
+            this.lblCf2F4.TabIndex = 21;
+            this.lblCf2F4.Text = "CF";
+            // 
+            // lblDef3F4
+            // 
+            this.lblDef3F4.AutoSize = true;
+            this.lblDef3F4.Location = new System.Drawing.Point(3, 194);
+            this.lblDef3F4.Name = "lblDef3F4";
+            this.lblDef3F4.Size = new System.Drawing.Size(23, 19);
+            this.lblDef3F4.TabIndex = 20;
+            this.lblDef3F4.Text = "LB";
+            // 
+            // lblDef5F4
+            // 
+            this.lblDef5F4.AutoSize = true;
+            this.lblDef5F4.Location = new System.Drawing.Point(102, 245);
+            this.lblDef5F4.Name = "lblDef5F4";
+            this.lblDef5F4.Size = new System.Drawing.Size(26, 19);
+            this.lblDef5F4.TabIndex = 19;
+            this.lblDef5F4.Text = "CB";
+            // 
+            // lblDef2F4
+            // 
+            this.lblDef2F4.AutoSize = true;
+            this.lblDef2F4.Location = new System.Drawing.Point(305, 236);
+            this.lblDef2F4.Name = "lblDef2F4";
+            this.lblDef2F4.Size = new System.Drawing.Size(26, 19);
+            this.lblDef2F4.TabIndex = 18;
+            this.lblDef2F4.Text = "CB";
+            // 
+            // lblDef1F4
+            // 
+            this.lblDef1F4.AutoSize = true;
+            this.lblDef1F4.Location = new System.Drawing.Point(421, 194);
+            this.lblDef1F4.Name = "lblDef1F4";
+            this.lblDef1F4.Size = new System.Drawing.Size(25, 19);
+            this.lblDef1F4.TabIndex = 17;
+            this.lblDef1F4.Text = "RB";
+            // 
+            // lblMid3F4
+            // 
+            this.lblMid3F4.AutoSize = true;
+            this.lblMid3F4.Location = new System.Drawing.Point(52, 102);
+            this.lblMid3F4.Name = "lblMid3F4";
+            this.lblMid3F4.Size = new System.Drawing.Size(27, 19);
+            this.lblMid3F4.TabIndex = 16;
+            this.lblMid3F4.Text = "LM";
+            // 
+            // lblMid2F4
+            // 
+            this.lblMid2F4.AutoSize = true;
+            this.lblMid2F4.Location = new System.Drawing.Point(357, 99);
+            this.lblMid2F4.Name = "lblMid2F4";
+            this.lblMid2F4.Size = new System.Drawing.Size(29, 19);
+            this.lblMid2F4.TabIndex = 15;
+            this.lblMid2F4.Text = "RM";
+            // 
+            // lblDef4F4
+            // 
+            this.lblDef4F4.AutoSize = true;
+            this.lblDef4F4.Location = new System.Drawing.Point(207, 207);
+            this.lblDef4F4.Name = "lblDef4F4";
+            this.lblDef4F4.Size = new System.Drawing.Size(26, 19);
+            this.lblDef4F4.TabIndex = 14;
+            this.lblDef4F4.Text = "CB";
+            // 
+            // lblGkF4
+            // 
+            this.lblGkF4.AutoSize = true;
+            this.lblGkF4.Location = new System.Drawing.Point(207, 301);
+            this.lblGkF4.Name = "lblGkF4";
+            this.lblGkF4.Size = new System.Drawing.Size(24, 19);
+            this.lblGkF4.TabIndex = 13;
+            this.lblGkF4.Text = "Gk";
+            // 
+            // pnlFormation5
+            // 
+            this.pnlFormation5.Controls.Add(this.lblCf1F5);
+            this.pnlFormation5.Controls.Add(this.lblMid2F5);
+            this.pnlFormation5.Controls.Add(this.lblCf2F5);
+            this.pnlFormation5.Controls.Add(this.lblDef1F5);
+            this.pnlFormation5.Controls.Add(this.lblMid4F5);
+            this.pnlFormation5.Controls.Add(this.lblMid5F5);
+            this.pnlFormation5.Controls.Add(this.lblDef3F5);
+            this.pnlFormation5.Controls.Add(this.lblMid1F5);
+            this.pnlFormation5.Controls.Add(this.lblMid3F5);
+            this.pnlFormation5.Controls.Add(this.lblDef2F5);
+            this.pnlFormation5.Controls.Add(this.lblGkF5);
+            this.pnlFormation5.HorizontalScrollbarBarColor = true;
+            this.pnlFormation5.HorizontalScrollbarHighlightOnWheel = false;
+            this.pnlFormation5.HorizontalScrollbarSize = 10;
+            this.pnlFormation5.Location = new System.Drawing.Point(5, 3);
+            this.pnlFormation5.Name = "pnlFormation5";
+            this.pnlFormation5.Size = new System.Drawing.Size(451, 353);
+            this.pnlFormation5.TabIndex = 9;
+            this.pnlFormation5.VerticalScrollbarBarColor = true;
+            this.pnlFormation5.VerticalScrollbarHighlightOnWheel = false;
+            this.pnlFormation5.VerticalScrollbarSize = 10;
+            // 
+            // lblCf1F5
+            // 
+            this.lblCf1F5.AutoSize = true;
+            this.lblCf1F5.Location = new System.Drawing.Point(127, 23);
+            this.lblCf1F5.Name = "lblCf1F5";
+            this.lblCf1F5.Size = new System.Drawing.Size(25, 19);
+            this.lblCf1F5.TabIndex = 23;
+            this.lblCf1F5.Text = "CF";
+            // 
+            // lblMid2F5
+            // 
+            this.lblMid2F5.AutoSize = true;
+            this.lblMid2F5.Location = new System.Drawing.Point(207, 116);
+            this.lblMid2F5.Name = "lblMid2F5";
+            this.lblMid2F5.Size = new System.Drawing.Size(37, 19);
+            this.lblMid2F5.TabIndex = 22;
+            this.lblMid2F5.Text = "AMF";
+            // 
+            // lblCf2F5
+            // 
+            this.lblCf2F5.AutoSize = true;
+            this.lblCf2F5.Location = new System.Drawing.Point(264, 23);
+            this.lblCf2F5.Name = "lblCf2F5";
+            this.lblCf2F5.Size = new System.Drawing.Size(25, 19);
+            this.lblCf2F5.TabIndex = 21;
+            this.lblCf2F5.Text = "CF";
+            // 
+            // lblDef1F5
+            // 
+            this.lblDef1F5.AutoSize = true;
+            this.lblDef1F5.Location = new System.Drawing.Point(40, 236);
+            this.lblDef1F5.Name = "lblDef1F5";
+            this.lblDef1F5.Size = new System.Drawing.Size(23, 19);
+            this.lblDef1F5.TabIndex = 20;
+            this.lblDef1F5.Text = "LB";
+            // 
+            // lblMid4F5
+            // 
+            this.lblMid4F5.AutoSize = true;
+            this.lblMid4F5.Location = new System.Drawing.Point(97, 155);
+            this.lblMid4F5.Name = "lblMid4F5";
+            this.lblMid4F5.Size = new System.Drawing.Size(30, 19);
+            this.lblMid4F5.TabIndex = 19;
+            this.lblMid4F5.Text = "DM";
+            // 
+            // lblMid5F5
+            // 
+            this.lblMid5F5.AutoSize = true;
+            this.lblMid5F5.Location = new System.Drawing.Point(310, 152);
+            this.lblMid5F5.Name = "lblMid5F5";
+            this.lblMid5F5.Size = new System.Drawing.Size(30, 19);
+            this.lblMid5F5.TabIndex = 18;
+            this.lblMid5F5.Text = "DM";
+            // 
+            // lblDef3F5
+            // 
+            this.lblDef3F5.AutoSize = true;
+            this.lblDef3F5.Location = new System.Drawing.Point(358, 236);
+            this.lblDef3F5.Name = "lblDef3F5";
+            this.lblDef3F5.Size = new System.Drawing.Size(25, 19);
+            this.lblDef3F5.TabIndex = 17;
+            this.lblDef3F5.Text = "RB";
+            // 
+            // lblMid1F5
+            // 
+            this.lblMid1F5.AutoSize = true;
+            this.lblMid1F5.Location = new System.Drawing.Point(19, 107);
+            this.lblMid1F5.Name = "lblMid1F5";
+            this.lblMid1F5.Size = new System.Drawing.Size(27, 19);
+            this.lblMid1F5.TabIndex = 16;
+            this.lblMid1F5.Text = "LM";
+            // 
+            // lblMid3F5
+            // 
+            this.lblMid3F5.AutoSize = true;
+            this.lblMid3F5.Location = new System.Drawing.Point(411, 107);
+            this.lblMid3F5.Name = "lblMid3F5";
+            this.lblMid3F5.Size = new System.Drawing.Size(29, 19);
+            this.lblMid3F5.TabIndex = 15;
+            this.lblMid3F5.Text = "RM";
+            // 
+            // lblDef2F5
+            // 
+            this.lblDef2F5.AutoSize = true;
+            this.lblDef2F5.Location = new System.Drawing.Point(205, 245);
+            this.lblDef2F5.Name = "lblDef2F5";
+            this.lblDef2F5.Size = new System.Drawing.Size(26, 19);
+            this.lblDef2F5.TabIndex = 14;
+            this.lblDef2F5.Text = "CB";
+            // 
+            // lblGkF5
+            // 
+            this.lblGkF5.AutoSize = true;
+            this.lblGkF5.Location = new System.Drawing.Point(205, 304);
+            this.lblGkF5.Name = "lblGkF5";
+            this.lblGkF5.Size = new System.Drawing.Size(24, 19);
+            this.lblGkF5.TabIndex = 13;
+            this.lblGkF5.Text = "Gk";
             // 
             // Manager
             // 
@@ -1108,11 +1526,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.GridPlayers)).EndInit();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
-            this.metroTabPage3.ResumeLayout(false);
-            this.metroPanel3.ResumeLayout(false);
-            this.metroPanel3.PerformLayout();
-            this.metroPanel2.ResumeLayout(false);
-            this.metroPanel2.PerformLayout();
+            this.metroTabPage4.ResumeLayout(false);
+            this.metroTabPage4.PerformLayout();
+            this.pnlFormation3.ResumeLayout(false);
+            this.pnlFormation3.PerformLayout();
+            this.pnlFormation1.ResumeLayout(false);
+            this.pnlFormation1.PerformLayout();
+            this.pnlFormation2.ResumeLayout(false);
+            this.pnlFormation2.PerformLayout();
+            this.pnlFormation4.ResumeLayout(false);
+            this.pnlFormation4.PerformLayout();
+            this.pnlFormation5.ResumeLayout(false);
+            this.pnlFormation5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1135,7 +1560,6 @@
         private MetroFramework.Controls.MetroButton btnPlayerSearch;
         private MetroFramework.Controls.MetroGrid GridPlayers;
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
-        private MetroFramework.Controls.MetroTabPage metroTabPage3;
         private MetroFramework.Controls.MetroLabel metroLabel9;
         private MetroFramework.Controls.MetroTextBox txtSave;
         private MetroFramework.Controls.MetroTextBox txtPenaltySave;
@@ -1155,21 +1579,22 @@
         private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel lblEmpId;
         private System.Windows.Forms.Button btnSubmit;
-        private MetroFramework.Controls.MetroPanel metroPanel3;
-        private MetroFramework.Controls.MetroPanel metroPanel2;
-        private MetroFramework.Controls.MetroLabel lblCf1F1;
-        private MetroFramework.Controls.MetroLabel lvlCf2F1;
-        private MetroFramework.Controls.MetroLabel lblMid1F1;
+        private MetroFramework.Controls.MetroPanel pnlFormation3;
         private MetroFramework.Controls.MetroLabel lblDef4F1;
-        private MetroFramework.Controls.MetroLabel lblDef1F1;
-        private MetroFramework.Controls.MetroLabel lbldef2F1;
-        private MetroFramework.Controls.MetroLabel lbldef3F1;
-        private MetroFramework.Controls.MetroLabel lblMid3F1;
-        private MetroFramework.Controls.MetroLabel lblMid4F1;
-        private MetroFramework.Controls.MetroLabel lblMid2F1;
-        private MetroFramework.Controls.MetroLabel lblGkF1;
-        private System.Windows.Forms.Button btnFormation2;
-        private System.Windows.Forms.Button btnFormation1;
+        private MetroFramework.Controls.MetroTabPage metroTabPage4;
+        private MetroFramework.Controls.MetroLabel lblCf1F3;
+        private MetroFramework.Controls.MetroLabel lblMid2F3;
+        private MetroFramework.Controls.MetroLabel lblMid3F3;
+        private MetroFramework.Controls.MetroLabel lblDef1F3;
+        private MetroFramework.Controls.MetroLabel lblDef2F3;
+        private MetroFramework.Controls.MetroLabel lblDef4F3;
+        private MetroFramework.Controls.MetroLabel lblDef5F3;
+        private MetroFramework.Controls.MetroLabel lblMid1F3;
+        private MetroFramework.Controls.MetroLabel lblMid4F3;
+        private MetroFramework.Controls.MetroLabel lblDef3F3;
+        private MetroFramework.Controls.MetroLabel lblGkF3;
+        private MetroFramework.Controls.MetroPanel pnlFormation1;
+        private MetroFramework.Controls.MetroPanel pnlFormation2;
         private MetroFramework.Controls.MetroLabel lblCf1F2;
         private MetroFramework.Controls.MetroLabel lblCf2F2;
         private MetroFramework.Controls.MetroLabel lblCf3F2;
@@ -1181,5 +1606,41 @@
         private MetroFramework.Controls.MetroLabel lblMid3F2;
         private MetroFramework.Controls.MetroLabel lblMid2F2;
         private MetroFramework.Controls.MetroLabel lblGkF2;
+        private MetroFramework.Controls.MetroLabel lblCf1F1;
+        private MetroFramework.Controls.MetroLabel lvlCf2F1;
+        private MetroFramework.Controls.MetroLabel lblMid1F1;
+        private MetroFramework.Controls.MetroLabel lblDef1F1;
+        private MetroFramework.Controls.MetroLabel lbldef2F1;
+        private MetroFramework.Controls.MetroLabel lbldef3F1;
+        private MetroFramework.Controls.MetroLabel lblMid3F1;
+        private MetroFramework.Controls.MetroLabel lblMid4F1;
+        private MetroFramework.Controls.MetroLabel lblMid2F1;
+        private MetroFramework.Controls.MetroLabel lblGkF1;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Controls.MetroComboBox cmbFormation;
+        private MetroFramework.Controls.MetroPanel pnlFormation4;
+        private MetroFramework.Controls.MetroLabel lblCf1F4;
+        private MetroFramework.Controls.MetroLabel lblMid1F4;
+        private MetroFramework.Controls.MetroLabel lblCf2F4;
+        private MetroFramework.Controls.MetroLabel lblDef3F4;
+        private MetroFramework.Controls.MetroLabel lblDef5F4;
+        private MetroFramework.Controls.MetroLabel lblDef2F4;
+        private MetroFramework.Controls.MetroLabel lblDef1F4;
+        private MetroFramework.Controls.MetroLabel lblMid3F4;
+        private MetroFramework.Controls.MetroLabel lblMid2F4;
+        private MetroFramework.Controls.MetroLabel lblDef4F4;
+        private MetroFramework.Controls.MetroLabel lblGkF4;
+        private MetroFramework.Controls.MetroPanel pnlFormation5;
+        private MetroFramework.Controls.MetroLabel lblCf1F5;
+        private MetroFramework.Controls.MetroLabel lblMid2F5;
+        private MetroFramework.Controls.MetroLabel lblCf2F5;
+        private MetroFramework.Controls.MetroLabel lblDef1F5;
+        private MetroFramework.Controls.MetroLabel lblMid4F5;
+        private MetroFramework.Controls.MetroLabel lblMid5F5;
+        private MetroFramework.Controls.MetroLabel lblDef3F5;
+        private MetroFramework.Controls.MetroLabel lblMid1F5;
+        private MetroFramework.Controls.MetroLabel lblMid3F5;
+        private MetroFramework.Controls.MetroLabel lblDef2F5;
+        private MetroFramework.Controls.MetroLabel lblGkF5;
     }
 }

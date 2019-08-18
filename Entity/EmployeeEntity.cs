@@ -49,19 +49,19 @@ namespace FootballClubMS.Entity
         {
             this.Name = name;
             this.Designation = designation;
-            if (Designation.ToLower().Equals("admin"))
+            if (Designation.ToLower().Equals("Admin"))
             {
                 int temp = EmployeeRepository.GetValueForEmployeeId() + 1;
                 this.Id = "a-" + temp; 
             }
-            else if (Designation.ToLower().Equals("manager"))
+            else if (Designation.ToLower().Equals("Manager"))
             {
                 int temp = EmployeeRepository.GetValueForEmployeeId() + 1;
                 this.Id = "m-" + temp;
 
             }
 
-            else if (Designation.ToLower().Equals("seller"))
+            else if (Designation.ToLower().Equals("Ticket Seller"))
             {
                 int temp = EmployeeRepository.GetValueForEmployeeId() + 1;
                 this.Id = "s-" + temp;
