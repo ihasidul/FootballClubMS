@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FootballClubMS.Repository;
-using FootballClubMS.Data;
+
 
 
 
@@ -59,9 +59,9 @@ namespace FootballClubMS.Entity
             set { this.weeklyFee = value; }
         }
 
-        public PlayerEntity(string name, string position, string email,DateTime validationDate,double performance,double weeklyFee)
+        public PlayerEntity(string name, string position, string email,DateTime validationDate,double weeklyFee)
         {
-            int temp = PlayerRepository.GetValueForPlayerId();
+            int temp = PlayerRepository.GetValueForPlayerId() + 1;
             this.Id = "p-" + temp;
             this.Name = name;
             this.Position = position;

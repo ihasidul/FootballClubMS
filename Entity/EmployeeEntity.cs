@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using FootballClubMS.Applications;
-using FootballClubMS.Data;
 using System.Windows.Forms;
 using FootballClubMS.Repository;
 

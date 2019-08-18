@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FootballClubMS.Repository;
-using FootballClubMS.Data;
+
 
 namespace FootballClubMS.Entity
 {
@@ -42,7 +42,7 @@ namespace FootballClubMS.Entity
       
         public CustomerEntity(string name,string email,bool fan)
         {
-            int temp = CustomerRepository.GetValueForCustomerId();
+            int temp = CustomerRepository.GetValueForCustomerId() + 1;
             this.Id = "c-" + temp;
             this.Name = name;
             this.Email = email;

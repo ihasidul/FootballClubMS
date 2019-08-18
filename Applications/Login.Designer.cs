@@ -40,21 +40,21 @@
             // pnlLogin
             // 
             this.pnlLogin.AutoScroll = true;
-            this.pnlLogin.AutoScrollMinSize = new System.Drawing.Size(453, 0);
+            this.pnlLogin.AutoScrollMinSize = new System.Drawing.Size(463, 0);
             this.pnlLogin.BackColor = System.Drawing.SystemColors.Window;
             this.pnlLogin.Controls.Add(this.btnLogin);
             this.pnlLogin.Controls.Add(this.txtPassword);
             this.pnlLogin.Controls.Add(this.lblPassword);
             this.pnlLogin.Controls.Add(this.lblId);
             this.pnlLogin.Controls.Add(this.txtId);
-            this.pnlLogin.Location = new System.Drawing.Point(36, 77);
+            this.pnlLogin.Location = new System.Drawing.Point(3, 77);
             this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(453, 271);
+            this.pnlLogin.Size = new System.Drawing.Size(463, 271);
             this.pnlLogin.TabIndex = 0;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(232, 159);
+            this.btnLogin.Location = new System.Drawing.Point(232, 135);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 31);
             this.btnLogin.TabIndex = 4;
@@ -77,10 +77,10 @@
             this.txtPassword.CustomButton.UseSelectable = true;
             this.txtPassword.CustomButton.Visible = false;
             this.txtPassword.Lines = new string[0];
-            this.txtPassword.Location = new System.Drawing.Point(157, 106);
+            this.txtPassword.Location = new System.Drawing.Point(157, 93);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;
@@ -95,7 +95,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(11, 106);
+            this.lblPassword.Location = new System.Drawing.Point(52, 93);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(63, 19);
             this.lblPassword.TabIndex = 2;
@@ -105,7 +105,7 @@
             // 
             this.lblId.AutoSize = true;
             this.lblId.ForeColor = System.Drawing.Color.Cornsilk;
-            this.lblId.Location = new System.Drawing.Point(13, 53);
+            this.lblId.Location = new System.Drawing.Point(52, 53);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(21, 19);
             this.lblId.TabIndex = 1;
@@ -146,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(474, 421);
             this.Controls.Add(this.pnlLogin);
             this.Name = "Login";
             this.Text = "Login";

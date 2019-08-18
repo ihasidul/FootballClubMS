@@ -1,19 +1,26 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using FootballClubMS.Applications;
 using FootballClubMS.Entity;
 using FootballClubMS.Data;
+
 
 namespace FootballClubMS.Repository
 {
     class PlayerRepository
     {
         private static DataSet Ds { get; set; }
-    
+       
+
+
+
         public static int GetValueForPlayerId() //this is to get an int to make autoid
         {
             try
@@ -31,6 +38,7 @@ namespace FootballClubMS.Repository
                 return 0;
             }
         }
+
         public static DataSet GetAllPlayers(string sql = "select * from player;")
         {
             try
@@ -48,9 +56,9 @@ namespace FootballClubMS.Repository
             try
             {
                 {
-                    string sql = "insert into player(player_id,player_name,position,player_email,validationdate,performance,weeklyfee) values('" + pl.Id + "','" + pl.Name + "','" + pl.Position + "','" + pl.Email + "','" + pl.ValidationDate + "',0," + pl.WeeklyFee + ");";
+                    string sql = "insert into player(player_id,player_name,position,player_email,validation_date,performance,weekly_fee) values('" + pl.Id + "','" + pl.Name + "','" + pl.Position + "','" + pl.Email + "','" + pl.ValidationDate + "',0," + pl.WeeklyFee + ");";
 
-                    MessageBox.Show("data inserted");
+                    
                     return DataAccess.GetDataSet(sql);
                 }
             }
@@ -65,7 +73,7 @@ namespace FootballClubMS.Repository
             {
                 {
 
-                    string sql = "UPDATE player SET player_name = '" + pl.Id + "',  player_email = '" + pl.Email + "',position = '" + pl.Position + "', validationdate = '" + pl.ValidationDate + "', weeklyfee = '" + pl.WeeklyFee + "' WHERE player_id = '" + pl.Id + "'; ";
+                    string sql = "UPDATE player SET player_name = '" + pl.Name + "',  player_email = '" + pl.Email + "',position = '" + pl.Position + "', validation_date = '" + pl.ValidationDate + "', weekly_fee = '" + pl.WeeklyFee + "' WHERE player_id = '" + pl.Id + "'; ";
 
                     MessageBox.Show("data updated");
                     return DataAccess.GetDataSet(sql);
@@ -84,7 +92,7 @@ namespace FootballClubMS.Repository
             {
                 {
 
-                    string sql = "UPDATE player SET performance = '" + pl.Performance + "'  WHERE id = '" + pl.Id + "'; ";
+                    string sql = "UPDATE player SET performance = '" + pl.Performance + "'  WHERE player_id = '" + pl.Id + "'; ";
 
                     MessageBox.Show("data updated");
                     return DataAccess.GetDataSet(sql);
@@ -101,7 +109,7 @@ namespace FootballClubMS.Repository
         {
             try
             {
-                string sql = "select * from player where playr_name LIKE '%" + text + "%' ;";
+                string sql = "select * from player where player_name LIKE '%" + text + "%' ;";
                 return DataAccess.GetDataSet(sql);
             }
             catch (Exception ex)
@@ -115,7 +123,7 @@ namespace FootballClubMS.Repository
             try
             {
                 string sql = "delete from player where player_id = '" + text + "';";//this is for player table
-                string sqlLogin = "delete from login where player_id = '" + text + "';";
+                string sqlLogin = "delete from login where id = '" + text + "';";
                 DataAccess.GetDataSet(sqlLogin);
                 return DataAccess.GetDataSet(sql);
             }
@@ -125,7 +133,6 @@ namespace FootballClubMS.Repository
                 return null;
             }
         }
-
         //for player position
         public static DataSet GetPlayerPosition(string text)
         {
@@ -149,8 +156,8 @@ namespace FootballClubMS.Repository
                 Ds = DataAccess.GetDataSet(sql);
                 double previousPerformance = Convert.ToInt32(Ds.Tables[0].Rows[0][0].ToString());
                 double currentPerformance = (performance + previousPerformance) / 2;
-                sql = "update player SET performance = TRY_CONVERT(float,'" + currentPerformance + "') where id = '" + text + "';";
-                DataAccess.GetDataSet(sql);
+                sql = "update player SET performance = TRY_CONVERT(float,'" + currentPerformance + "') where player_id = '" + text + "';";
+                DataAccess.ExecuteQuery(sql);
             }
             catch (Exception exc)
             {
@@ -158,7 +165,7 @@ namespace FootballClubMS.Repository
             }
         }
         //find top 2 striker with performance
-        public static DataSet GetStrikerInFormation1()
+        public static DataSet GetTwoStriker()
         {
             try
             {
@@ -172,7 +179,7 @@ namespace FootballClubMS.Repository
             }
         }
         //find top 4 midfielder with performance
-        public static DataSet GetMidfielderInFormation1()
+        public static DataSet GetFourMidfielder()
         {
             try
             {
@@ -186,7 +193,7 @@ namespace FootballClubMS.Repository
             }
         }
         //find top 4 defender with performance
-        public static DataSet GetDefender()
+        public static DataSet GetFourDefender()
         {
             try
             {
@@ -215,7 +222,7 @@ namespace FootballClubMS.Repository
         }
 
         //find top 3 striker with performance
-        public static DataSet GetStrikerInFormation2()
+        public static DataSet GetThreeStriker()
         {
             try
             {
@@ -229,7 +236,7 @@ namespace FootballClubMS.Repository
             }
         }
         //find top 3 midfielder with performance
-        public static DataSet GetMidfielderInFormation2()
+        public static DataSet GetThreeMidfielder()
         {
             try
             {
@@ -242,6 +249,82 @@ namespace FootballClubMS.Repository
                 return null;
             }
         }
+
+        //find top 1 striker with performance
+        public static DataSet GetOneStriker()
+        {
+            try
+            {
+                string sql = "select top 1 player_name from player where position = 'striker' order by performance desc;";
+                return DataAccess.GetDataSet(sql);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error: " + exc.Message);
+                return null;
+            }
+        }
+
+        //find top 3 defender with performance
+        public static DataSet GetThreeDefender()
+        {
+            try
+            {
+                string sql = "select top 3 player_name from player where position = 'defender' order by performance desc;";
+                return DataAccess.GetDataSet(sql);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error: " + exc.Message);
+                return null;
+            }
+        }
+
+        //find top 5 defender with performance
+        public static DataSet GetFiveDefender()
+        {
+            try
+            {
+                string sql = "select top 5 player_name from player where position = 'defender' order by performance desc;";
+                return DataAccess.GetDataSet(sql);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error: " + exc.Message);
+                return null;
+            }
+        }
+
+        //find top 5 midfielder with performance
+        public static DataSet GetFiveMidfielder()
+        {
+            try
+            {
+                string sql = "select top 5 player_name from player where position = 'midfielder' order by performance desc;";
+                return DataAccess.GetDataSet(sql);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error: " + exc.Message);
+                return null;
+            }
+        }
+
+   
+        public static DataSet GetSpecificPlayer(string id)
+        {
+            try
+            {
+                string sql = "select * from player where player_id = '" + id + "';";
+                return DataAccess.GetDataSet(sql);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
+        }
+
 
     }
 }

@@ -27,9 +27,12 @@ namespace FootballClubMS.Framework
                 return false;
         }
 
-        public static bool IsTheStringDouble(string text)
+        public static bool IsTheStringNumber(string text)
         {
-            
+
+            int oup;
+            bool isInt = int.TryParse(text, out oup);
+            return isInt;
         }
     }
 }

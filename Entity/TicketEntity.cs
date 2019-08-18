@@ -30,11 +30,11 @@ namespace FootballClubMS.Entity
             set { this.price = value; }
         }
 
-        public TicketEntity(string serialno,string customerId,double price)
+        public TicketEntity(string customerId,double price)
         {
 
-            int temp = TicketRepository.GetValueForTicketId();
-            this.SerialNo = "c-" + temp;
+            int temp = TicketRepository.GetValueForTicketId() + 1;
+            this.SerialNo = "t-" + temp;
             this.CustomerId = customerId;
             this.Price = price;
         }
