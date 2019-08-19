@@ -345,7 +345,7 @@ namespace FootballClubMS.Applications
 
         private void BtnChangePassword_Click(object sender, EventArgs e)
         {
-            try
+              try
             {
 
                 if (Validation.IsStringValid(this.txtOldPassword.Text) == true && Validation.IsStringValid(this.txtNewPassword.Text) == true)

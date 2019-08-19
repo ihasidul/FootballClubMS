@@ -37,9 +37,6 @@ namespace FootballClubMS.Repository
             {
                 {
                     string sql = "insert into customer(customer_id, customer_name, customer_email, fan) values ('" + customer.Id + "','" + customer.Name + "','" + customer.Email + "','" + customer.Fan + "');";
-
-
-                    MessageBox.Show("data inserted");
                     return DataAccess.GetDataSet(sql);
                 }
             }

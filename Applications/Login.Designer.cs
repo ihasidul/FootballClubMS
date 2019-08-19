@@ -42,7 +42,7 @@
             // pnlLogin
             // 
             this.pnlLogin.AutoScroll = true;
-            this.pnlLogin.AutoScrollMinSize = new System.Drawing.Size(463, 0);
+            this.pnlLogin.AutoScrollMinSize = new System.Drawing.Size(463, 14);
             this.pnlLogin.BackColor = System.Drawing.SystemColors.Window;
             this.pnlLogin.Controls.Add(this.btnPassEye);
             this.pnlLogin.Controls.Add(this.btnLogin);
@@ -54,6 +54,7 @@
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(463, 271);
             this.pnlLogin.TabIndex = 0;
+            this.pnlLogin.Text = " ";
             // 
             // btnPassEye
             // 
@@ -95,6 +96,7 @@
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
+            this.txtPassword.PromptText = "Insert Password";
             this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;
@@ -104,6 +106,7 @@
             this.txtPassword.TabIndex = 3;
             this.txtPassword.UseSelectable = true;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.WaterMark = "Insert Password";
             this.txtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -146,6 +149,7 @@
             this.txtId.MaxLength = 32767;
             this.txtId.Name = "txtId";
             this.txtId.PasswordChar = '\0';
+            this.txtId.PromptText = "Insert ID";
             this.txtId.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtId.SelectedText = "";
             this.txtId.SelectionLength = 0;
@@ -154,6 +158,7 @@
             this.txtId.Size = new System.Drawing.Size(150, 23);
             this.txtId.TabIndex = 0;
             this.txtId.UseSelectable = true;
+            this.txtId.WaterMark = "Insert ID";
             this.txtId.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtId.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 

@@ -28,6 +28,8 @@ namespace FootballClubMS.Repository
             }
         }
 
+  
+
         public static void InsertUser(string id,string passworrd)
         {
 
