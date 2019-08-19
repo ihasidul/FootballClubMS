@@ -107,7 +107,7 @@ namespace FootballClubMS.Applications
             try
             {
                 if (Validation.IsStringAName(this.txtCustomerName.Text) == true && Validation.IsStringMail(this.txtCustomerEmail.Text) == true &&
-                   this.cmbTicketQuantity.SelectedItem != null && this.cmbCustomerType.SelectedItem != null && this.cmbFanStatus != null)
+                   this.cmbTicketQuantity.SelectedItem != null && this.cmbCustomerType.SelectedItem != null && this.cmbFanStatus != null) 
                 {
                     bool fanStatus = false;
                     if (this.cmbFanStatus.Text == "Fan")

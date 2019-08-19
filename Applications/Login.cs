@@ -83,5 +83,18 @@ namespace FootballClubMS.Applications
         {
             Application.Exit();
         }
+
+        private void BtnPassEye_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.txtPassword.PasswordChar= '\0';
+            this.txtPassword.UseSystemPasswordChar = false;
+        }
+
+        private void BtnPassEye_MouseUp(object sender, MouseEventArgs e)
+        {
+            
+            this.txtPassword.UseSystemPasswordChar = true;
+            
+        }
     }
 }

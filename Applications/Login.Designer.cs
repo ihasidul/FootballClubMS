@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pnlLogin = new MetroFramework.Drawing.Html.HtmlPanel();
+            this.btnPassEye = new MetroFramework.Controls.MetroButton();
             this.btnLogin = new MetroFramework.Controls.MetroButton();
             this.txtPassword = new MetroFramework.Controls.MetroTextBox();
             this.lblPassword = new MetroFramework.Controls.MetroLabel();
@@ -42,6 +44,7 @@
             this.pnlLogin.AutoScroll = true;
             this.pnlLogin.AutoScrollMinSize = new System.Drawing.Size(463, 0);
             this.pnlLogin.BackColor = System.Drawing.SystemColors.Window;
+            this.pnlLogin.Controls.Add(this.btnPassEye);
             this.pnlLogin.Controls.Add(this.btnLogin);
             this.pnlLogin.Controls.Add(this.txtPassword);
             this.pnlLogin.Controls.Add(this.lblPassword);
@@ -51,6 +54,17 @@
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(463, 271);
             this.pnlLogin.TabIndex = 0;
+            // 
+            // btnPassEye
+            // 
+            this.btnPassEye.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPassEye.BackgroundImage")));
+            this.btnPassEye.Location = new System.Drawing.Point(304, 93);
+            this.btnPassEye.Name = "btnPassEye";
+            this.btnPassEye.Size = new System.Drawing.Size(24, 23);
+            this.btnPassEye.TabIndex = 5;
+            this.btnPassEye.UseSelectable = true;
+            this.btnPassEye.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnPassEye_MouseDown);
+            this.btnPassEye.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BtnPassEye_MouseUp);
             // 
             // btnLogin
             // 
@@ -80,7 +94,7 @@
             this.txtPassword.Location = new System.Drawing.Point(157, 93);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.PasswordChar = '●';
             this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;
@@ -89,6 +103,7 @@
             this.txtPassword.Size = new System.Drawing.Size(150, 23);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.UseSelectable = true;
+            this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPassword.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -165,5 +180,6 @@
         private MetroFramework.Controls.MetroLabel lblId;
         private MetroFramework.Controls.MetroTextBox txtId;
         private MetroFramework.Controls.MetroButton btnLogin;
+        private MetroFramework.Controls.MetroButton btnPassEye;
     }
 }
