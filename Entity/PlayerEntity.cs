@@ -94,5 +94,27 @@ namespace FootballClubMS.Entity
                 MessageBox.Show(ex.Message);
             }
         }
+
+        public PlayerEntity(DataSet player,string email,double weeklyFee, DateTime validationDate)
+        {
+            try
+            {
+                this.Id = player.Tables[0].Rows[0][0].ToString();
+                this.Name = player.Tables[0].Rows[0][1].ToString(); ;
+                this.Position = player.Tables[0].Rows[0][2].ToString();
+                this.Email = email;
+                this.ValidationDate = validationDate;//converting to date type
+                string p = player.Tables[0].Rows[0][5].ToString();
+                this.Performance = Convert.ToDouble(p);
+                this.WeeklyFee = weeklyFee;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Could not get Player informatin");
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

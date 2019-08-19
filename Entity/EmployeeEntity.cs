@@ -95,5 +95,21 @@ namespace FootballClubMS.Entity
                
             }
         }
+        public EmployeeEntity(DataSet employee,string email,double salary)
+        {
+            try
+            {
+                this.Id = employee.Tables[0].Rows[0][0].ToString();
+                this.Name = employee.Tables[0].Rows[0][1].ToString();
+                this.Designation = employee.Tables[0].Rows[0][2].ToString();
+                this.Email = email;
+                this.Salary = salary;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Could not get Employee informatin");
+
+            }
+        }
     }
 }

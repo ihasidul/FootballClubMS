@@ -65,7 +65,7 @@ namespace FootballClubMS.Repository
             {
                 {
 
-                    string sql = "UPDATE employee SET emp_name = '" + emp.Name + "',  emp_email = '" + emp.Email + "',designation = '" + emp.Designation + "', salary = '" + emp.Salary + "' WHERE emp_id = '" + emp.Id + "'; ";
+                    string sql = "UPDATE employee SET emp_name = '" + emp.Name + "',emp_email = '" + emp.Email + "',designation = '" + emp.Designation + "', salary = '" + emp.Salary + "' WHERE emp_id = '" + emp.Id + "'; ";
 
                     MessageBox.Show("data updated");
                     return DataAccess.GetDataSet(sql);

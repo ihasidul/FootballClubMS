@@ -104,106 +104,124 @@ namespace FootballClubMS.Applications
 
         private void BtnDone_Click(object sender, EventArgs e)
         {
-            bool fanStatus = false;
-            if (this.cmbFanStatus.Text == "Fan")
+            try
             {
-                fanStatus = true;
-            }
-            else
-            {
-
-            }
-
-            if ((this.cmbCustomerType.Text == "New") && (this.cmbFanStatus.Text == "Not Fan"))
-            {
-
-                try
+                if (Validation.IsStringAName(this.txtCustomerName.Text) == true && Validation.IsStringMail(this.txtCustomerEmail.Text) == true &&
+                   this.cmbTicketQuantity.SelectedItem != null && this.cmbCustomerType.SelectedItem != null && this.cmbFanStatus != null)
                 {
-                    
-                    if (Validation.IsStringValid(this.txtCustomerName.ToString()) == true && Validation.IsStringValid(this.txtCustomerEmail.ToString()) == true)
+                    bool fanStatus = false;
+                    if (this.cmbFanStatus.Text == "Fan")
                     {
-                        
-                        CustomerEntity ce = new CustomerEntity(this.txtCustomerName.Text, this.txtCustomerEmail.Text, fanStatus);
-                        CustomerRepository.InsertCustomer(ce);
-                        MessageBox.Show("Your ID is " + ce.Id + " ");
+                        fanStatus = true;
+                    }
+                    else
+                    {
+
+                    }
+
+                    if ((this.cmbCustomerType.Text == "New") && (this.cmbFanStatus.Text == "Not Fan"))
+                    {
+
+                        try
+                        {
+
+                            if (Validation.IsStringValid(this.txtCustomerName.Text) == true && Validation.IsStringValid(this.txtCustomerEmail.Text) == true)
+                            {
+
+                                CustomerEntity ce = new CustomerEntity(this.txtCustomerName.Text, this.txtCustomerEmail.Text, fanStatus);
+                                CustomerRepository.InsertCustomer(ce);
+                                MessageBox.Show("Your ID is " + ce.Id + " ");
+                                double price = PriceCalculator();
+                                TicketEntity tik3 = new TicketEntity(ce.Id, price);
+                                TicketRepository.InsertTicket(tik3);
+                                this.txtTotalPrice.Text = price.ToString();
+                                this.txtCustomerEmail.Text = "";
+                                this.txtCustomerId.Text = "";
+                                this.txtCustomerName.Text = "";
+                                this.txtPricePerTicket.Text = "";
+                                PopulateGridViewShowAllTicketInfo();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Please Insert all information.");
+                            }
+
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Problem in insertion");
+                        }
+                    }
+                    else if ((this.cmbCustomerType.Text == "New") && (this.cmbFanStatus.Text == "Fan"))
+                    {
+                        try
+                        {
+                            if (Validation.IsStringValid(this.txtCustomerName.ToString()) == true && Validation.IsStringValid(this.txtCustomerEmail.ToString()) == true)
+                            {
+
+                                CustomerEntity ce = new CustomerEntity(this.txtCustomerName.Text, this.txtCustomerEmail.Text, fanStatus);
+                                CustomerRepository.InsertCustomer(ce);
+                                MessageBox.Show("Your ID is " + ce.Id + " ");
+                                double price = PriceCalculator() + 100;
+                                TicketEntity tik2 = new TicketEntity(ce.Id, price);
+                                TicketRepository.InsertTicket(tik2);
+                                this.txtTotalPrice.Text = price.ToString();
+                                PopulateGridViewShowAllTicketInfo();
+                                this.txtCustomerEmail.Text = "";
+                                this.txtCustomerId.Text = "";
+                                this.txtCustomerName.Text = "";
+                                this.txtPricePerTicket.Text = "";
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Please Insert all information.");
+                            }
+
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Problem in insertion");
+                        }
+                    }
+                    else if (this.cmbCustomerType.Text == "Existing")
+                    {
+                        this.btnGet.Enabled = true;
                         double price = PriceCalculator();
-                        TicketEntity tik3 = new TicketEntity(ce.Id, price);
-                        TicketRepository.InsertTicket(tik3);
                         this.txtTotalPrice.Text = price.ToString();
-                        this.txtCustomerEmail.Text = "";
-                        this.txtCustomerId.Text = "";
-                        this.txtCustomerName.Text = "";
-                        this.txtPricePerTicket.Text = "";
-                        PopulateGridViewShowAllTicketInfo();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please Insert all information.");
-                    }
 
-                }
-                catch
-                {
-                    MessageBox.Show("Problem in insertion");
-                }
-            }
-            else if ((this.cmbCustomerType.Text == "New") && (this.cmbFanStatus.Text == "Fan"))
-            {
-                try
-                {
-                    if (Validation.IsStringValid(this.txtCustomerName.ToString()) == true && Validation.IsStringValid(this.txtCustomerEmail.ToString()) == true)
-                    {
+                        TicketEntity tik = new TicketEntity(this.txtCustomerId.Text, price);
+                        TicketRepository.InsertTicket(tik);
 
-                        CustomerEntity ce = new CustomerEntity(this.txtCustomerName.Text, this.txtCustomerEmail.Text, fanStatus);
-                        CustomerRepository.InsertCustomer(ce);
-                        MessageBox.Show("Your ID is " + ce.Id + " ");
-                        double price = PriceCalculator() + 100;
-                        TicketEntity tik2 = new TicketEntity(ce.Id, price);
-                        TicketRepository.InsertTicket(tik2);
-                        this.txtTotalPrice.Text = price.ToString();
                         PopulateGridViewShowAllTicketInfo();
                         this.txtCustomerEmail.Text = "";
                         this.txtCustomerId.Text = "";
                         this.txtCustomerName.Text = "";
                         this.txtPricePerTicket.Text = "";
+                        this.cmbFanStatus.Text = "";
 
                     }
                     else
                     {
-                        MessageBox.Show("Please Insert all information.");
+                        MessageBox.Show("Please Insert All the values");
                     }
+                    this.cmbFanStatus.Enabled = true;
 
+
+                    PopulateGridViewShowAllTicketInfo();
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("Problem in insertion");
+                    MessageBox.Show("Please insert valid values");
                 }
-            }
-            else if (this.cmbCustomerType.Text == "Existing")
-            {
-                this.btnGet.Enabled = true;
-                double price = PriceCalculator();
-                this.txtTotalPrice.Text = price.ToString();
                 
-                TicketEntity tik =new  TicketEntity(this.txtCustomerId.Text, price);
-                TicketRepository.InsertTicket(tik);
-
-                PopulateGridViewShowAllTicketInfo();
-                this.txtCustomerEmail.Text = "";
-                this.txtCustomerId.Text = "";
-                this.txtCustomerName.Text = "";
-                this.txtPricePerTicket.Text = "";
-                this.cmbFanStatus.Text = "";
-
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("I am in single else");
+
+                MessageBox.Show(ex.Message);
             }
-            this.cmbFanStatus.Enabled = true;
-
-
-            PopulateGridViewShowAllTicketInfo();
+            
         }
         /*public void PopulateGridViewTicketInfo()
         {

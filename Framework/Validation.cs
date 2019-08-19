@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FootballClubMS.Entity;
 using FootballClubMS.Repository;
+using System.Text.RegularExpressions;
 namespace FootballClubMS.Framework
 {
     public static class Validation
@@ -26,13 +27,48 @@ namespace FootballClubMS.Framework
             else
                 return false;
         }
+        
+        public static bool IsStringMail(string text)
+        {
+            //stringOrNumber@stringOrNumber.nameOrNumber 
+            Regex rx = new Regex("^[a-zA-Z0-9]{1,40}@[a-zA-Z0-9]{1,40}.[a-zA-Z]{2,4}$");
+            if (rx.IsMatch(text))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+                
+        }
 
-        public static bool IsTheStringNumber(string text)
+        public static bool IsStringNumber(string text)
+        {
+            Regex rx = new Regex("^[0-9]{1,7}.[0-9]{1,5}$");
+            Regex rxor = new Regex("^[0-9]{1,7}$");
+            if (rx.IsMatch(text) == true ||rxor.IsMatch(text) == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static bool IsStringAName(string text)
         {
 
-            int oup;
-            bool isInt = int.TryParse(text, out oup);
-            return isInt;
+            Regex rx = new Regex("^[a-zA-Z]{1,20}$");
+            if (rx.IsMatch(text))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }

@@ -115,26 +115,30 @@ namespace FootballClubMS.Applications
         {
             try
             {
-                if (Validation.IsStringValid(this.txtEmpName.ToString()) == true && Validation.IsStringValid(this.txtEmpDesignation.ToString()) == true &&
-                    Validation.IsStringValid(this.txtEmpEmail.ToString()) == true && Validation.IsStringValid(this.txtEmpSalary.ToString()) == true)
+                if (Validation.IsStringValid(this.txtEmpName.Text) == true && Validation.IsStringValid(this.txtEmpDesignation.Text) == true &&
+                    Validation.IsStringValid(this.txtEmpEmail.Text) == true && Validation.IsStringValid(this.txtEmpSalary.Text.ToString()) == true)
                 { 
+                    if(Validation.IsStringAName(this.txtEmpName.Text) == true && Validation.IsStringAName(this.txtEmpDesignation.Text) == true &&
+                    Validation.IsStringMail(this.txtEmpEmail.Text) == true && Validation.IsStringNumber(this.txtEmpSalary.Text.ToString()) == true)
+                    {
+                        double salary = Convert.ToDouble(this.txtEmpSalary.Text.ToString());
+                        EmployeeEntity te = new EmployeeEntity(this.txtEmpName.Text, this.txtEmpDesignation.Text, this.txtEmpEmail.Text, salary);
+                        EmployeeRepository.InsertEmployee(te);
+                        Random rnd = new Random();
+                        string password = rnd.Next(100, 999).ToString();
+                        LoginRepository.InsertUser(te.Id, password);
+                        MessageBox.Show("Your ID is " + te.Id + " and Password is " + password);
+                        PopulateGridviewForEmployee();
+                        this.txtEmpName.Text = "";
+                        this.txtEmpDesignation.Text = "";
+                        this.txtEmpEmail.Text = "";
+                        this.txtEmpSalary.Text = "";
 
-                    double salary = Convert.ToDouble(this.txtEmpSalary.Text.ToString());
-                    EmployeeEntity te = new EmployeeEntity(this.txtEmpName.Text, this.txtEmpDesignation.Text, this.txtEmpEmail.Text, salary);
-                    EmployeeRepository.InsertEmployee(te);
-                    Random rnd = new Random();
-                    string password = rnd.Next(100, 999).ToString();
-                    LoginRepository.InsertUser(te.Id, password);
-                    MessageBox.Show("Your ID is " + te.Id + " and Password is " + password);
-                    PopulateGridviewForEmployee();
-                    this.txtEmpName.Text = "";
-                    this.txtEmpDesignation.Text = "";
-                    this.txtEmpEmail.Text = "";
-                    this.txtEmpSalary.Text = "";
-
-                    //Validation.IsTheStringNumber(this.txtEmpName.ToString()) == true && Validation.IsTheStringNumber(this.txtEmpDesignation.ToString()) == true &&
-                    //Validation.IsTheStringNumber(this.txtEmpEmail.ToString()) == true
-
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Insert Proper Values");
+                    }
                 }
                 else
                 {
@@ -245,23 +249,34 @@ namespace FootballClubMS.Applications
         {
             try
             {
-                if (Validation.IsStringValid(this.txtPlayerName.ToString()) == true  &&
-                    Validation.IsStringValid(this.txtPlayerEmail.ToString()) == true && Validation.IsStringValid(this.txtPlayerFee.ToString()) == true)
+                if (Validation.IsStringValid(this.txtPlayerName.Text) == true  && this.cmbPlayerPosition.SelectedItem != null &&
+                    Validation.IsStringValid(this.txtPlayerEmail.Text) == true && Validation.IsStringValid(this.txtPlayerFee.Text) == true)
                 {
-                    double weeklyFee = Convert.ToDouble(this.txtPlayerFee.Text.ToString());
-                    DateTime dt = Convert.ToDateTime(dtpPlayerValidation.Text);
-                    PlayerEntity pe = new PlayerEntity(this.txtPlayerName.Text, this.cmbPlayerPosition.Text, this.txtPlayerEmail.Text,dt, weeklyFee);
-                    PlayerRepository.InsertPlayer(pe);
-                    Random rnd = new Random();
-                    string password = rnd.Next(100, 999).ToString();
-                    LoginRepository.InsertUser(pe.Id, password);
-                    MessageBox.Show("Your ID is " + pe.Id + " and Password is " + password);
-                    PopulateGridviewForPlayer();
-                    this.txtPlayerName.Text = "";
-                    this.cmbPlayerPosition.Text = "";
-                    this.txtPlayerEmail.Text = "";
-                    this.txtPlayerFee.Text = "";
-                    this.dtpPlayerValidation.ResetText();
+                    if (Validation.IsStringMail(this.txtPlayerEmail.Text) == true && Validation.IsStringAName(this.txtPlayerName.Text) == true &&
+                        Validation.IsStringNumber(this.txtPlayerFee.Text) == true)
+
+                    {
+                        double weeklyFee = Convert.ToDouble(this.txtPlayerFee.Text.ToString());
+                        DateTime dt = Convert.ToDateTime(dtpPlayerValidation.Text);
+                        PlayerEntity pe = new PlayerEntity(this.txtPlayerName.Text, this.cmbPlayerPosition.Text, this.txtPlayerEmail.Text, dt, weeklyFee);
+                        PlayerRepository.InsertPlayer(pe);
+                        Random rnd = new Random();
+                        string password = rnd.Next(100, 999).ToString();
+                        LoginRepository.InsertUser(pe.Id, password);
+                        MessageBox.Show("Your ID is " + pe.Id + " and Password is " + password);
+                        PopulateGridviewForPlayer();
+                        this.txtPlayerName.Text = "";
+                        this.cmbPlayerPosition.Text = "";
+                        this.txtPlayerEmail.Text = "";
+                        this.txtPlayerFee.Text = "";
+                        this.dtpPlayerValidation.ResetText();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please,Insert Correct Values");
+                    }
+
+                    
 
                     //Validation.IsTheStringNumber(this.txtEmpName.ToString()) == true && Validation.IsTheStringNumber(this.txtEmpDesignation.ToString()) == true &&
                     //Validation.IsTheStringNumber(this.txtEmpEmail.ToString()) == true
@@ -326,49 +341,110 @@ namespace FootballClubMS.Applications
 
         private void BtnPlayerUpdate_Click(object sender, EventArgs e)
         {
-            double weeklyFee = Convert.ToDouble(this.txtPlayerFee.Text.ToString());
-            DateTime dt = Convert.ToDateTime(dtpPlayerValidation.Text);
-            PlayerEntity pe = new PlayerEntity(this.txtPlayerName.Text, this.cmbPlayerPosition.Text, this.txtPlayerEmail.Text, dt, weeklyFee);
-            PlayerRepository.UpdatePlayer(pe);
-            PopulateGridviewForPlayer();
-            this.txtPlayerName.Text = "";
-            this.cmbPlayerPosition.Text = "";
-            this.txtPlayerEmail.Text = "";
-            this.txtPlayerFee.Text = "";
-            this.dtpPlayerValidation.ResetText();
+            try
+            {
+                if (Validation.IsStringValid(this.txtPlayerName.Text) == true && this.cmbPlayerPosition.SelectedItem != null &&
+                    Validation.IsStringValid(this.txtPlayerEmail.Text) == true && Validation.IsStringValid(this.txtPlayerFee.Text) == true)
+                {
+                    if (Validation.IsStringMail(this.txtPlayerEmail.Text) == true && Validation.IsStringAName(this.txtPlayerName.Text) == true &&
+                        Validation.IsStringNumber(this.txtPlayerFee.Text) == true)
 
-            //make the text box enable
-            this.txtPlayerName.ReadOnly = false;
-            this.cmbPlayerPosition.Enabled = true;
-            this.btnPlayerUpdate.Enabled = false;
-            this.btnPlayerDelete.Enabled = false;
-            this.btnPlayerSignUp.Enabled = true;
-            
+                    {
+                        try
+                        {
+                            double weeklyFee = Convert.ToDouble(this.txtPlayerFee.Text.ToString());
+                            DateTime dt = Convert.ToDateTime(dtpPlayerValidation.Text);
+                            this.Ds = PlayerRepository.GetSpecificPlayer(this.dgvPlayer.CurrentRow.Cells["player_id"].Value.ToString());
+                            PlayerEntity pe = new PlayerEntity(Ds,this.txtPlayerEmail.Text,Convert.ToDouble(this.txtPlayerFee.Text),dt);
+                            PlayerRepository.UpdatePlayer(pe);
+                            PopulateGridviewForPlayer();
+                            this.txtPlayerName.Text = "";
+                            this.cmbPlayerPosition.Text = "";
+                            this.txtPlayerEmail.Text = "";
+                            this.txtPlayerFee.Text = "";
+                            this.dtpPlayerValidation.ResetText();
+
+                            //make the text box enable
+                            this.txtPlayerName.ReadOnly = false;
+                            this.cmbPlayerPosition.Enabled = true;
+                            this.btnPlayerUpdate.Enabled = false;
+                            this.btnPlayerDelete.Enabled = false;
+                            this.btnPlayerSignUp.Enabled = true;
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Problem in insertion");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please,Insert Correct Values");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please Insert all information.");
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Problem in insertion");
+            }            
         }
 
         private void BtnEmpUpdate_Click(object sender, EventArgs e)
         {
             try
             {
-                double salary = Convert.ToDouble(this.txtEmpSalary.Text.ToString());
+                if (Validation.IsStringValid(this.txtEmpName.Text) == true && Validation.IsStringValid(this.txtEmpDesignation.Text) == true &&
+                    Validation.IsStringValid(this.txtEmpEmail.Text) == true && Validation.IsStringValid(this.txtEmpSalary.Text.ToString()) == true)
+                {
+                    if (Validation.IsStringAName(this.txtEmpName.Text) == true && Validation.IsStringAName(this.txtEmpDesignation.Text) == true &&
+                    Validation.IsStringMail(this.txtEmpEmail.Text) == true && Validation.IsStringNumber(this.txtEmpSalary.Text.ToString()) == true)
+                    {
 
-                EmployeeEntity te = new EmployeeEntity(this.txtEmpName.Text, this.txtEmpDesignation.Text, this.txtEmpEmail.Text, salary);
-                EmployeeRepository.UpdateEmployee(te);
-                PopulateGridviewForEmployee();
-                this.txtEmpName.ReadOnly = false;
-                this.txtEmpDesignation.ReadOnly = false;
-                this.txtEmpName.Text = "";
-                this.txtEmpDesignation.Text = "";
-                this.txtEmpEmail.Text = "";
-                this.txtEmpSalary.Text = "";
-                this.btnEmpUpdate.Enabled = false;
-                this.btnEmployeeDelete.Enabled = false;
-                this.btnEmpSignUp.Enabled = true;
+                        try
+                        {
+                            double salary = Convert.ToDouble(this.txtEmpSalary.Text.ToString());
+
+                            this.Ds = EmployeeRepository.GetSpecificEmployee(this.dgvEmployee.CurrentRow.Cells["emp_id"].Value.ToString());
+                            EmployeeEntity te = new EmployeeEntity(Ds, this.txtEmpEmail.Text, Convert.ToDouble(this.txtEmpSalary.Text));
+                            EmployeeRepository.UpdateEmployee(te);
+                            PopulateGridviewForEmployee();
+                            this.txtEmpName.ReadOnly = false;
+                            this.txtEmpDesignation.ReadOnly = false;
+                            this.txtEmpName.Text = "";
+                            this.txtEmpDesignation.Text = "";
+                            this.txtEmpEmail.Text = "";
+                            this.txtEmpSalary.Text = "";
+                            this.btnEmpUpdate.Enabled = false;
+                            this.btnEmployeeDelete.Enabled = false;
+                            this.btnEmpSignUp.Enabled = true;
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Insert Proper Values");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please Insert all information.");
+                }
+
             }
-            catch(Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Problem in insertion");
             }
+
+
         }
     }
 }
